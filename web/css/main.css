@@ -8,13 +8,14 @@ li {
     list-style-type: none;
 }
 
-a {
+nav.barrita-nav ul li a {
     text-decoration: none;
     color: black;
 }
 
-.barrita-nav li{
-    display: inline-block;
+nav.barrita-nav ul li{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+
 }
