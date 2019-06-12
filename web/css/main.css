@@ -19,3 +19,23 @@ nav.barrita-nav ul li{
     align-items: center;
 
 }
+
+.topper div {
+    background-image: url(../img/pixels.jpg);
+}
+
+.topper div h1 {
+  font-size: 3rem;
+
+}
+
+
+.iconito {
+  font-size: 1.9em;
+  border: 2px solid grey;
+}
+
+
+div ion-icon {
+  font-size: 4rem;
+}

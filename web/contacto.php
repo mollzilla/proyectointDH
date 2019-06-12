@@ -14,12 +14,19 @@
   </head>
   <body>
 <body>
-  <?php   include "header.php"; /* para incluir la botonera de navegacion*/
+<div class="container bg-color-light">
 
-  $nombreDelJueguito = "Jueguito";
+
+  <?php
+  $seccion = "Contacto";
+
+   include "header.php"; /* para incluir la botonera de navegacion*/
+
 
 
   ?>
+<div class="container bg-light">
+
 
 
     <h2>Contactanos!</h2>
@@ -28,20 +35,21 @@
 
     <form action="contacto.php" method="POST">
 
-        Nombre: <input type="text" name="nombre" value="<?= $_POST? $_POST["nombre"] : ''; ?>"> <br>
-        Correo Electronico: <input type="email" name="email" value="<?= $_POST? $_POST["email"] : ''; ?>"> <br>
-            <label for="radio" value=""</label> <?=  $nombreDelJueguito  ?></label>
-            Si <input type="radio" name="jugador" id="si" value="si" <? if $_POST { $_POST["jugador"] == "si" ? echo 'checked' : '';} ?>
-            No <input type="radio" name="jugador" id="no" value="no" <? if $_POST { $_POST["jugador"] == "no" ? echo 'checked' : '';} ?> <br>
+        Nombre: <input type="text" name="nombre" class="form-control" value="<?= $_POST? $_POST["nombre"] : ''; ?>"> <br>
+        Correo Electronico: <input type="email" name="email" class="form-control" value="<?= $_POST? $_POST["email"] : ''; ?>"> <br>
+            <label for="radio" value=""> <?= "Sos jugador de " . $nombreDelJueguito . "?" ?></label>
+            <div class="">
+              <p class="text-center">Si </p><input type="radio" name="jugador" class="form-control button" value="si" <?php if ($_POST && $_POST["jugador"] == "si") { echo 'checked';} ?>>
+              <p class="text-center">No </p> <input type="radio" name="jugador" class="form-control button" value="no" <?php if ($_POST && $_POST["jugador"] == "no") { echo 'checked';} ?>> <br>
+            </div>
             <label for="textarea" name="consulta"> Escribinos Aqui tu consulta</label><br>
-            <textarea name="consulta" id="consulta" cols="30" rows="10" >
+            <textarea name="consulta" id="consulta" class="form-control" cols="30" rows="10" >
               <?=$_POST? $_POST["consulta"]: '';
 
            ?>
             </textarea>
             <br>
-            <input type="submit" name="enviar" value="Enviar">
-
+            <input type="submit" name="enviar" class="form-control btn-primary" value="Enviar">
 
     </form>
 
@@ -62,7 +70,7 @@
         if (count($errores) > 0) {
                 ?><ul>
                 <?php foreach ($errores as $error) : ?>
-                    <li><?= $error?></li>
+                    <li class="text-danger"><?= $error?></li>
         <?php endforeach; ?>
                   </ul>
         <?php
@@ -76,6 +84,8 @@
 
 
 ?>
+</div>
 
+</div>
 </body>
 </html>

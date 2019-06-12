@@ -34,7 +34,8 @@
       <div class="main">
         <ul>
           <?php foreach ($questions as $question => $answer) : ?>
-            <li><?= $question . "<br>" .  $answer ?></li>
+            <li class="font-weight-bold"><?= $question ?></li>
+            <li class=""><?= $answer ?></li>
           <?php endforeach; ?>
         </ul>
 

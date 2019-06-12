@@ -19,7 +19,9 @@
 <?php
 
 $nombreDelJueguito = "El Jueguito";
+$seccion = "";
 global $nombreDelJueguito;
+global $seccion;
 
 $botones = ["Home" => "",
  "Login" => "",
@@ -31,10 +33,10 @@ $botones = ["Home" => "",
 ?>
 
 <header>
-    <nav class="barrita-nav">
-        <ul>
+    <nav class="barrita-nav p-3">
+        <ul class="nav nav-pills nav-fill">
          <?php foreach ($botones as $boton => $link) : ?>
-         <li><a href="<?=$link?>"><?= $boton?></a></li>
+         <li class="nav-item"><a class="btn btn-outline-info" href="<?=$link?>"><?= $boton?></a></li>
          <?php endforeach;?>
 
 
