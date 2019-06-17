@@ -8,28 +8,31 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Sigmar+One|Work+Sans:900&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/main.css">
     <title>Hello, world!</title>
   </head>
   <body>
 <body>
-<div class="container bg-color-light">
-
+<div>
 
   <?php
   $seccion = "Contacto";
 
    include "header.php"; /* para incluir la botonera de navegacion*/
 
-
-
   ?>
 <div class="container bg-light">
 
+  <div class="bg-tarjetita pt-5 pb-5 ">
+
+  </div>
+
+  <div class="main p-4">
 
 
-    <h2>Contactanos!</h2>
+    <h2  >Contactanos!</h2>
 
     <h3>Dejanos tus datos y en breve nos comunicaremos con vos!</h3>
 
@@ -78,12 +81,14 @@
             echo "Gracias! En Breve nos comunicaremos con vos";
         }
     }
-        else {
-        echo "Por favor completa los datos que solicita el formulario";
-        }
+        else { ?>
+        <p class="text-center text-danger">Por favor completa los datos que solicita el formulario</p>
+        <?php }
 
 
 ?>
+</div>
+<?php include 'footer.php'; ?>
 </div>
 
 </div>

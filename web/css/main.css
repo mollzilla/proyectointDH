@@ -4,9 +4,31 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+h1 {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 3em;
+  color: rgb(26,161,183) ;
+  text-transform: uppercase;
+  text-shadow: 0 0 2px #000;;
+}
+
+
 li {
     list-style-type: none;
 }
+
+@media (min-width: 968px) {
+
+ion-icon.iconito {
+  font-size: 4rem;
+  }
+
+
+li.segundo-row {
+
+
+}
+
 
 nav.barrita-nav ul li a {
     text-decoration: none;
@@ -21,7 +43,8 @@ nav.barrita-nav ul li{
 }
 
 .topper div {
-    background-image: url(../img/pixels.jpg);
+    background-image: url(../img/pixels-arriba.png);
+    background-size: auto 100%;
 }
 
 .topper div h1 {
@@ -29,13 +52,28 @@ nav.barrita-nav ul li{
 
 }
 
-
-.iconito {
-  font-size: 1.9em;
-  border: 2px solid grey;
+a ion-icon.iconito {
+color: black!important;
 }
 
+ion-icon.iconito {
+  font-size: 2rem;
+
+  }
+
+div .bg-tarjetita {
+  background-image: url(../img/pixels-arriba.png);
+  background-size: auto 100%;
+}
+
+div .bg-fondito {
+    background-image: url(../img/pixel-guarda.png);
+    background-size: auto 100%;
+
+}
 
 div ion-icon {
-  font-size: 4rem;
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
 }

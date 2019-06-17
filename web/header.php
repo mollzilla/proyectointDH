@@ -23,28 +23,34 @@ $seccion = "";
 global $nombreDelJueguito;
 global $seccion;
 
-$botones = ["Home" => "",
- "Login" => "",
- "Registrarse" => "",
- "Mi Perfil" => "",
- "Preguntas Frecuentes" => "",
- "Contacto" => ""];
+$botones = ["Home" => "home.php",
+ "Login" => "#",
+ "Registrarse" => "register.php",
+ "Mi Perfil" => "perfil.php",
+ "Preguntas Frecuentes" => "faq.php",
+ "Contacto" => "contacto.php"];
 
 ?>
 
-<header>
-    <nav class="barrita-nav p-3">
+<header class="container bg-light pb-3">
+  <div >
+
+    <nav class="barrita-nav p-3 d-none d-md-block">
         <ul class="nav nav-pills nav-fill">
          <?php foreach ($botones as $boton => $link) : ?>
-         <li class="nav-item"><a class="btn btn-outline-info" href="<?=$link?>"><?= $boton?></a></li>
+         <li class="nav-item"><a class="btn btn-outline-info mb-2" href="<?=$link?>"><?= $boton?></a></li>
          <?php endforeach;?>
-
-
-
-
         </ul>
     </nav>
 
+    <nav class="p-3 d-block d-md-none list-group">
+        <?php foreach ($botones as $boton => $link) : ?>
+         <a class="list-group-item list-group-item-action text-uppercase bg-light text-center text-info" href="<?=$link?>"><?= $boton?></a>
+         <?php endforeach;?>
+        </ul>
+    </nav>
+
+</div>
 </header>
 
 </body>
