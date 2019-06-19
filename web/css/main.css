@@ -19,14 +19,9 @@ li {
 
 @media (min-width: 968px) {
 
-ion-icon.iconito {
-  font-size: 4rem;
+a ion-icon.iconito {
+  font-size: 48px;
   }
-
-
-li.segundo-row {
-
-
 }
 
 
@@ -58,10 +53,15 @@ color: black!important;
 
 ion-icon.iconito {
   font-size: 2rem;
-
+  color: black!important;
   }
 
 div .bg-tarjetita {
+  background-image: url(../img/pixels-arriba.png);
+  background-size: auto 100%;
+}
+
+.bg-tarjetita {
   background-image: url(../img/pixels-arriba.png);
   background-size: auto 100%;
 }

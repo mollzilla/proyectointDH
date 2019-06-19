@@ -24,7 +24,7 @@
           <div class="bg-tarjetita pt-5 pb-5">
           </div>
 
-          <h2 class="p-3 pl-5 font-weight-bold">Preguntas Frecuentes</h1>
+          <h2 class="p-3 pl-5 font-weight-bold">Preguntas Frecuentes</h2>
 
 
 <main class="container">

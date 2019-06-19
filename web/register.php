@@ -44,7 +44,7 @@
 
   <div class="card tarjetita-header mt-3 text-center">
       <div class="card-body">
-      <h4 class="card-title mt-3>Bienvenido!</h4>
+      <h4 class="card-title mt-3">Bienvenido!</h4>
       <h5 class="card-subtitle text-secondary">Completa los siguientes datos para completar tu registracion.</h5>
       </div>
 

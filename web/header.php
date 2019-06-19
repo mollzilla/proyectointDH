@@ -26,7 +26,7 @@ global $seccion;
 $botones = ["Home" => "home.php",
  "Login" => "#",
  "Registrarse" => "register.php",
- "Mi Perfil" => "perfil.php",
+ "Mi Perfil" => "usuarios.php",
  "Preguntas Frecuentes" => "faq.php",
  "Contacto" => "contacto.php"];
 

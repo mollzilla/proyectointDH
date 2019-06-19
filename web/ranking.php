@@ -25,7 +25,7 @@
 
     <title>Hello, world!</title>
   </head>
-
+  <body>
 <body>
 <div class="container bg-light">
 
@@ -36,34 +36,20 @@
   ?>
 
 
-<div class="topper mt-4">
 
-  <div class="titulo-jueguito mb-5">
-    <h1 class="d-flex justify-content-center p-5 titulo-jueguito"><?= Ranking de Jugadores de $nombreDelJueguito ?></h1>
-
+  <div class="bg-tarjetita pt-5 pb-5">
   </div>
 
 
-<?php
-$jugadoresEnJson = file_get_contents("archivo.txt");
-$jugadores = json_decode($jugadoresEnJson);
+    <h1 class= "text-center pt-3 m-0 titulo-jueguito text-wrap">RANKING</h1>
 
 
-foreach ($jugadores as $jugador) {
-  foreach ($jugador as $dato => $valor) {
-    //agarrar el valor puntaje y guardarlo en una array de puntajes
-    // ordenar los valores de esa array
-    //encontrar una manera de que esos valores llamen al nombre y avatar de ese Jugador
-    //
-  }
-}
-?>
-<ol>
-  <!--<li> <a href= perfil.php?email= <?php /*  $jugador */ ?>></a> </li> Esta seria una propuesta de como quedaria completo -->
-  <li> <a href="#">$nombreDelJugador</a> </li>
-</ol>
+
+    <?php include 'footer.php'; ?>
+
+
+
 
 </div>
 
-</div>
 </body>

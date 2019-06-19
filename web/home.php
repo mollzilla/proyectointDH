@@ -75,11 +75,11 @@
 
     <h3 class="text-center pt-4 p-2 font-weight-bold">Seguinos en las Redes Sociales!</h3>
   <div class="footer1 col-12 d-flex justify-content-center p-5">
-      <a href="#" class="iconito p-3 text-wrap"><ion-icon class="text-gray iconito text-wrap" name="logo-facebook"></ion-icon></a>
-      <a href="#" class="iconito p-3 text-wrap"><ion-icon class="text-gray iconito text-wrap" name="logo-googleplus"></ion-icon></a> 
-      <a href="#" class="iconito p-3 text-wrap"><ion-icon class="text-gray iconito text-wrap" name="logo-twitter"></ion-icon></a> 
-      <a href="#" class="iconito p-3 text-wrap"><ion-icon class="text-gray iconito text-wrap" name="logo-linkedin"></ion-icon></a> 
-      <a href="#" class="iconito p-3 text-wrap"><ion-icon class="text-gray iconito text-wrap" name="logo-dribbble"></ion-icon></a> 
+      <a href="#" class="iconito p-2 text-wrap"><ion-icon class="text-gray iconito text-wrap" name="logo-facebook"></ion-icon></a>
+      <a href="#" class="iconito p-2 text-wrap"><ion-icon class="text-gray iconito text-wrap" name="logo-googleplus"></ion-icon></a>
+      <a href="#" class="iconito p-2 text-wrap"><ion-icon class="text-gray iconito text-wrap" name="logo-twitter"></ion-icon></a>
+      <a href="#" class="iconito p-2 text-wrap"><ion-icon class="text-gray iconito text-wrap" name="logo-linkedin"></ion-icon></a>
+      <a href="#" class="iconito p-2 text-wrap"><ion-icon class="text-gray iconito text-wrap" name="logo-dribbble"></ion-icon></a>
 
   </div>
 
