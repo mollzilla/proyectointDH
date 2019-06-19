@@ -20,7 +20,7 @@
   <?php
   $seccion = "Contacto";
 
-   include "header.php"; /* para incluir la botonera de navegacion*/
+   include "../header.php"; /* para incluir la botonera de navegacion*/
 
   ?>
 <div class="container bg-light">
