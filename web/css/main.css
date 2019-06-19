@@ -17,6 +17,12 @@ li {
     list-style-type: none;
 }
 
+div .footer1 {
+
+  padding:
+}
+
+
 @media (min-width: 968px) {
 
 a ion-icon.iconito {
@@ -76,4 +82,10 @@ div ion-icon {
   font-size: 2rem;
   text-decoration: none;
   color: black;
+}
+
+.foto-perfil {
+  border-radius: 100%;
+  width: 10vw;
+
 }

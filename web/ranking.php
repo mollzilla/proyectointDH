@@ -41,15 +41,23 @@
   </div>
 
 
-    <h1 class= "text-center pt-3 m-0 titulo-jueguito text-wrap">RANKING</h1>
-
-
-
-    <?php include 'footer.php'; ?>
+    <h1 class= "text-center pt-3 pb-3 m-0 titulo-jueguito text-wrap">RANKING DE JUGADORES</h1>
 
 
 
 
+
+
+    <div class="ranking">
+      <ol>
+        <li class="list-group"><div class="posicion-usuario">
+
+         <img src="img/faces/face1.jpg" alt="Un Gamer" class="foto-perfil">Lorem Impsum  </div></li>
+
+      </ol>
+    </div>
+
+<?php include 'footer.php'; ?>
 </div>
 
 </body>
