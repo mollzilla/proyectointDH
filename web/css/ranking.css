@@ -1,0 +1,76 @@
+.avatar-thumbnail {
+  width: 35vw;
+  height: 35vw;
+  border: 2px solid rgb(221,99,86);
+  padding: 5px;
+
+}
+
+.profile-container {
+    width: 100px;
+    overflow: visible;
+    position: relative;
+    display: block;
+    z-index: 2;
+
+}
+
+.container {
+  overflow: hidden;
+  position: relative;
+}
+
+.footer {
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+
+.nro-ranking {
+
+    position: absolute;
+    top: 25%;
+    z-index: 5;
+
+}
+
+
+.medallita {
+    z-index: 10;
+    height: 30px;
+    width: 30px;
+    border: 2px solid rgb(221,99,86);
+    border-radius: 100%
+    }
+
+
+.player-name {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.4em;
+  color: rgb(26,161,183) ;
+  text-transform: uppercase;
+  text-shadow: 0 0 2px #000;
+  display: block;
+  width: 80%
+}
+
+@media (min-width: 768px) {
+
+.avatar-thumbnail {
+  width: 100px;
+  height: 100px;
+
+}
+
+.profile-container {
+  width: 100px;
+  overflow: visible;
+}
+
+.nro-ranking {
+
+  left: -10%;
+}
+
+
+} /*fin media query 768*/
