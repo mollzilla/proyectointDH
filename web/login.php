@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="css/login.css">
 
-    <title></title>
+    <title>Inicia Sesion</title>
   </head>
   <body>
     <?php

@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css?family=Sigmar+One|Work+Sans:900&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/main.css">
-    <title>Hello, world!</title>
+    <title>Contactanos</title>
   </head>
   <body>
 <body>
