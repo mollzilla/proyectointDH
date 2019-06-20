@@ -7,11 +7,11 @@
 }
 
 .profile-container {
-  width: 40vw;
-  overflow: hidden;
-  position: relative;
-  display: block;
-  z-index: 2;
+    width: 100px;
+    overflow: visible;
+    position: relative;
+    display: block;
+    z-index: 2;
 
 }
 
@@ -29,7 +29,7 @@
 .nro-ranking {
 
     position: absolute;
-    top: 30%;
+    top: 25%;
     z-index: 5;
 
 }
@@ -55,31 +55,21 @@
 }
 
 @media (min-width: 768px) {
-  .player-container {
-    width: 33%;
-    display: flex;
-flex-direction: column;
-    }
-
-.profile-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    justify-content: center;
-
-}
 
 .avatar-thumbnail {
-  width: 15vw;
-  height: 15vw;
-  display: flex;
-  justify-content: center;
+  width: 100px;
+  height: 100px;
+
 }
 
-.medallitas {
-    display: flex;
-    flex-direction: row;
+.profile-container {
+  width: 100px;
+  overflow: visible;
+}
 
+.nro-ranking {
+
+  left: -10%;
 }
 
 

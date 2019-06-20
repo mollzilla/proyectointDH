@@ -52,10 +52,13 @@ $jugadoresRankeados = [
 
 ];
 
-  foreach ($jugadoresRankeados as $jugador) {
-  ?>
+?>
 
-    <div class="player-container text-center pb-5">
+<div class="row">
+<?php foreach ($jugadoresRankeados as $jugador): ?>
+  <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+
+    <div class="player-container text-center pb-5 ">
       <div class="profile-container text-center"> <!--la voy a poner dentro de un div para que tome el 100% del div y no crezca tanto -->
 
         <img src="img/faces/<?= $jugador["avatar"] ?>" class="rounded-circle mt-5 avatar-thumbnail" alt="">
@@ -75,10 +78,11 @@ $jugadoresRankeados = [
       <h2 class="player-name text-center"><?=$jugador["nombre"] ?></h2>
 
     </div>
-    <?php  } ?>
 
+  </div>
 
-
+<?php endforeach; ?>
+</div>
 
 </div>
   <div class="footer">
