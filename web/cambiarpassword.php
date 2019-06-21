@@ -33,7 +33,7 @@
 
 <h2 class="text-info">Modifica tu Contraseña</h2>
   <div class="form-group">
-    <form class="" action="password.php" method="post">
+    <form class="" action="cambiarpassword.php" method="post">
       <label for="email" class='text-dark'>E-mail:</label>
       <input type="text" name="email" class="form-control" value="Lorem@impsum.com" readonly>
       <br>
@@ -46,7 +46,11 @@
       <input type="submit" name="enviar" class="btn btn-primary" value="Cambiar contraseña">
     </form>
 
-    <?php include 'footer.php'; ?>
+    <?php if ($_POST) {
+      echo "Gracias! tu contrasena fue modificada con exito";
+    }
+
+    include 'footer.php'; ?>
     </div>
 
     </div>

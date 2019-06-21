@@ -37,7 +37,7 @@
     <input class="btn btn-primary mt-2 mb-2" type="submit" name="" value="enviar"><br>
   </form>
 <h3>Olvidaste tu contraseña?</h3>
-<a href="#">hacé click acá</a>
+<a href="./cambiarpassword.php">hacé click acá</a>
 
   <?php
   $seccion = "Contacto";

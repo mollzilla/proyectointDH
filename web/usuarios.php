@@ -24,7 +24,7 @@
   <div class="contenedor-imagen">
     <img  style="width:320px;display:block;" src=".\img\faces\face1.jpg" class="img-fluid rounded-circle rounded-sm my-3" alt="">
     <ul class="list-group">
-  <li class="list-group-item my-2">Bienvenido Nombre!!!</li>
+  <li class="list-group-item my-2">Bienvenido Juan Lorem!!!</li>
   <li class="list-group-item my-2">E-mail</li>
   <li class="list-group-item my-2">Estado</li> <!--Acá será editable para que pueda escribir un estado-->
 </ul>
@@ -40,7 +40,7 @@
 </ul>
 <h3 class="text-center font-weight-bold">Ranking</h3>
 <ul class="list-group">
-<li class="list-group-item my-2"></li>
+<li class="list-group-item my-2"><a href="./ranking.php">Conocer mi Lugar</a> </li>
 </ul>
 <div class="text-center">
   <button type="button" class="btn btn-primary mt-2 mb-2">
@@ -48,8 +48,7 @@
   </button>
 </div>
 <div class="text-center">
-  <button type="button" class="btn btn-primary mt-2 mb-2">
-    Modificar mi contraseña   <!-- tiene que linkear a cambiar contraseña -->
+    <a href="./cambiarpassword.php" class="btn btn-primary mt-2 mb-2">Modificar mi contraseña</a>   <!-- tiene que linkear a cambiar contraseña -->
   </button>
 </div>
 
