@@ -14,7 +14,7 @@
   </head>
   <body>
 <body>
-  <?php   include "header.php"; /* para incluir la botonera de navegacion*/?>
+    <?php   include "header.php"; /* para incluir la botonera de navegacion*/?>
     <div class="main">
         <div class="container bg-light pt5">
         <div class="bg-tarjetita pt-5 pb-5">
@@ -22,7 +22,7 @@
 
   <h1 class="text-center font-weight-bold">Mi Perfil</h1>
   <div class="contenedor-imagen">
-    <img src=".\img\faces\face1.jpg" class="img-fluid rounded-circle rounded-sm my-3" alt="">
+    <img  style="width:320px;display:block;" src=".\img\faces\face1.jpg" class="img-fluid rounded-circle rounded-sm my-3" alt="">
     <ul class="list-group">
   <li class="list-group-item my-2">Bienvenido Nombre!!!</li>
   <li class="list-group-item my-2">E-mail</li>
@@ -31,9 +31,11 @@
   </div>
 <ul class="list-group">
   <h3 class="text-center font-weight-bold">Amigos</h3>
-  <img src=".\img\faces\face2.jpg" class="img-fluid rounded-circle my-3" alt="">
+  <img style="width:100px;"src=".\img\faces\face2.jpg" class="img-fluid rounded-circle my-3" alt="">
 <li class="list-group-item my-2"></li>
+  <img style="width:100px;"src=".\img\faces\face3.jpg" class="img-fluid rounded-circle my-3" alt="">
 <li class="list-group-item my-2"></li>
+  <img style="width:100px;"src=".\img\faces\face4.jpg" class="img-fluid rounded-circle my-3" alt="">
 <li class="list-group-item my-2"></li>
 </ul>
 <h3 class="text-center font-weight-bold">Ranking</h3>

@@ -16,11 +16,13 @@
     <?php
   $seccion = "Contacto";
 
+
+
   include "./header.php"; /* para incluir la botonera de navegacion*/
 
   ?>
   <!-- acá copiar los includes de la página de contacto de Mili. -->
-<div class="container bg-color-light">;
+<div class="container bg-color-light">
   <div class="bg-tarjetita pt-5 pb-5 ">
 
   </div>
@@ -33,9 +35,10 @@
     <label class="text-dark" for="">password</label><br>
     <input class="form-control" type="password" name="password" value=""><br>
     <input class="btn btn-primary mt-2 mb-2" type="submit" name="" value="enviar"><br>
-
-
   </form>
+<h3>Olvidaste tu contraseña?</h3>
+<a href="#">hacé click acá</a>
+
   <?php
   $seccion = "Contacto";
 
