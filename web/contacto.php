@@ -17,19 +17,20 @@
 <body>
 <div>
 
+  <nav>
   <?php
   $seccion = "Contacto";
-
    include "./header.php"; /* para incluir la botonera de navegacion*/
-
   ?>
+  </nav>
+
 <div class="container bg-light">
 
   <div class="bg-tarjetita pt-5 pb-5 ">
 
   </div>
 
-  <div class="main p-4">
+  <main class="main p-4">
 
 
     <h2  >Contactanos!</h2>
@@ -37,19 +38,18 @@
     <h3>Dejanos tus datos y en breve nos comunicaremos con vos!</h3>
 
     <form action="contacto.php" method="POST">
-
-        Nombre: <input type="text" name="nombre" class="form-control" value="<?= $_POST? $_POST["nombre"] : ''; ?>"> <br>
-        Correo Electronico: <input type="email" name="email" class="form-control" value="<?= $_POST? $_POST["email"] : ''; ?>"> <br>
-            <label for="radio" value=""> <?= "Sos jugador de " . $nombreDelJueguito . "?" ?></label>
+            <label for="nombre">Nombre: </label>
+            <input type="text" id="nombre" name="nombre" class="form-control" value="<?= $_POST? $_POST["nombre"] : ''; ?>" required> <br>
+            <label for="email">Correo Electronico:</label>
+            <input type="email" id="email" name="email" class="form-control" value="<?= $_POST? $_POST["email"] : ''; ?>" required> <br>
+            <label for="radio"> <?= "Sos jugador de " . $nombreDelJueguito . "?" ?></label>
             <div class="">
-              <p class="text-center">Si </p><input type="radio" name="jugador" class="form-control button" value="si" <?php if ($_POST && $_POST["jugador"] == "si") { echo 'checked';} ?>>
-              <p class="text-center">No </p> <input type="radio" name="jugador" class="form-control button" value="no" <?php if ($_POST && $_POST["jugador"] == "no") { echo 'checked';} ?>> <br>
+              <p class="text-center">Si </p><input type="radio" id="jugador" name="jugador" class="form-control button" value="si" <?php if ($_POST && $_POST["jugador"] == "si") { echo 'checked';} ?>>
+              <p class="text-center">No </p> <input type="radio" id="jugador" name="jugador" class="form-control button" value="no" <?php if ($_POST && $_POST["jugador"] == "no") { echo 'checked';} ?>> <br>
             </div>
             <label for="textarea" name="consulta"> Escribinos Aqui tu consulta</label><br>
-            <textarea name="consulta" id="consulta" class="form-control" cols="30" rows="10" >
-              <?=$_POST? $_POST["consulta"]: '';
-
-           ?>
+            <textarea name="consulta" id="consulta" class="form-control" cols="30" rows="10" required>
+              <?=$_POST? $_POST["consulta"]: ''; ?>
             </textarea>
             <br>
             <input type="submit" name="enviar" class="form-control btn-primary" value="Enviar">
@@ -91,6 +91,6 @@
 <?php include 'footer.php'; ?>
 </div>
 
-</div>
+</main>
 </body>
 </html>

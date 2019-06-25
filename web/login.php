@@ -13,15 +13,14 @@
     <title>Inicia Sesion</title>
   </head>
   <body>
-    <?php
-  $seccion = "Contacto";
 
-
-
+<nav>
+  <?php
+  $seccion = "Login"
   include "./header.php"; /* para incluir la botonera de navegacion*/
-
   ?>
-  <!-- acá copiar los includes de la página de contacto de Mili. -->
+</nav>
+
 <div class="container bg-color-light">
   <div class="bg-tarjetita pt-5 pb-5 ">
 
@@ -39,11 +38,13 @@
 <h3>Olvidaste tu contraseña?</h3>
 <a href="./cambiarpassword.php">hacé click acá</a>
 
+
+<footer>
   <?php
   $seccion = "Contacto";
-
   include "./footer.php";
   ?>
+</footer>
 
 </div>
 ?>

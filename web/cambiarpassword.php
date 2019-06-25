@@ -17,12 +17,13 @@
 <body>
 <div>
 
+<nav>
   <?php
   $seccion = "Contacto";
-
-   include "./header.php"; /* para incluir la botonera de navegacion*/
-
+  include "./header.php"; /* para incluir la botonera de navegacion*/
   ?>
+</nav>
+
 <div class="container bg-light">
 
   <div class="bg-tarjetita pt-5 pb-5 ">
@@ -38,20 +39,23 @@
       <input type="text" name="email" class="form-control" value="Lorem@impsum.com" readonly>
       <br>
       <label for="password" class='text-dark'>Contraseña:</label>
-      <input type="password" class="form-control" name="password">
+      <input type="password" class="form-control" name="password" required>
       <br>
       <label for="confirmar" class='text-dark'>Confirmar Contraseña:</label>
-      <input type="password" class="form-control" name="confirmar">
+      <input type="password" class="form-control" name="confirmar" required>
       <br>
       <input type="submit" name="enviar" class="btn btn-primary" value="Cambiar contraseña">
     </form>
 
     <?php if ($_POST) {
       echo "Gracias! tu contrasena fue modificada con exito";
-    }
+    } ?>
 
-    include 'footer.php'; ?>
-    </div>
+    <footer>
+      <?php include 'footer.php'; ?>
+    </footer>
+
+      </div>
 
     </div>
     </body>

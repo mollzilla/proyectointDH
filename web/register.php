@@ -29,16 +29,17 @@
 
 <main class="container bg-light">
 
+<nav>
+
   <?php
     $seccion = "home";
-
     include "header.php"; /* para incluir la botonera de navegacion*/
   ?>
+</nav>
 
   <div class="container bg-light">
 
     <div class="bg-tarjetita pt-5 pb-5 ">
-
     </div>
 
 
@@ -54,19 +55,19 @@
  <form action="register.php" method="post">
     <br>
    <label for="nombre" class='text-dark'>Nombre:</label>
-   <input type="text" name="nombre" class="form-control">
+   <input type="text" name="nombre" id="nombre" class="form-control" required>
    <br>
    <label for="email" class='text-dark'>E-mail:</label>
-   <input type="text" name="email" class="form-control">
+   <input type="text" name="email" id="email" class="form-control" required>
    <br>
    <label for="password" class='text-dark'>Contraseña:</label>
-   <input type="password" name="password" class="form-control">
+   <input type="password" name="password" id="password" class="form-control" required>
    <br>
    <label for="confirmar" class='text-dark'>Confirmar Contraseña:</label>
-   <input type="password" name="confirmar" class="form-control">
+   <input type="password" name="confirmar" id="confirmar" class="form-control" required>
    <br>
    <label for="avatar" class='text-dark'>Elige una Imagen</label>
-   <input type="file" name="avatar" value="" >
+   <input type="file" name="avatar" id="avatar" value="" required>
    <br>
    <input type="submit" value="Registrarse" class="btn btn-primary mt-2 mb-2">
 
@@ -219,7 +220,10 @@ primero tendrá como id el número 1, el segundo el número 2 y así continuará
 secuencia…). Si el email fuese un campo único, también podría utilizarse esto.
 -->
 
+<footer>
 <?php include 'footer.php'; ?>
+</footer>
+
 </div>
 
 

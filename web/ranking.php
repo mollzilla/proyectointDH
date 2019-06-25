@@ -29,14 +29,18 @@
 
   <body>
     <div class="container bg-light">
+
+    <nav>
       <?php $seccion = "home";
-
       include "header.php"; /* para incluir la botonera de navegacion*/
-
       ?>
+    </nav>
 
     <div class="bg-tarjetita pt-5 pb-5">
     </div>
+
+<main>
+
 
     <h1 class= "text-center pt-3 pb-3 m-0 titulo-jueguito text-wrap">RANKING DE JUGADORES</h1>
 
@@ -87,10 +91,13 @@ $jugadoresRankeados = [
 </div>
   <div class="footer">
 
-
+  <nav>
     <?php include 'footer.php'; ?>
+  </nav>
 
   </div>
+
+</main>
 </div>
 
 </body>

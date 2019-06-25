@@ -14,7 +14,11 @@
   </head>
   <body>
 <body>
+
+  <nav>
     <?php   include "header.php"; /* para incluir la botonera de navegacion*/?>
+  </nav>
+
     <div class="main">
         <div class="container bg-light pt5">
         <div class="bg-tarjetita pt-5 pb-5">
@@ -55,8 +59,10 @@
 
 
 
-
+<footer>
 <?php include 'footer.php'; ?>
+</footer>
+
     </div>
   </body>
 </html>
