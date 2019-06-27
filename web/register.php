@@ -27,7 +27,7 @@
   </head>
   <body>
 
-<main class="container bg-light col-lg-6 offset-lg-3 col-md-8 offset-md-2">
+<div class="container bg-light">
 
 <nav>
 
@@ -37,10 +37,12 @@
   ?>
 </nav>
 
-  <div class="container bg-light">
+  <div class="bg-tarjetita pt-5 pb-5 ">
+  </div>
 
-    <div class="bg-tarjetita pt-5 pb-5 ">
-    </div>
+  <main class="col-lg-6 offset-lg-3 col-md-8 offset-md-2">
+
+
 
 
   <div class="card tarjetita-header mt-3 text-center">
@@ -220,14 +222,14 @@ primero tendrá como id el número 1, el segundo el número 2 y así continuará
 secuencia…). Si el email fuese un campo único, también podría utilizarse esto.
 -->
 
-<footer>
-<?php include 'footer.php'; ?>
-</footer>
 
-</div>
+  </main>
 
+    <footer>
+    <?php include 'footer.php'; ?>
+    </footer>
 
-</main>
+  </div>
 </body>
 
 </html>

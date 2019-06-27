@@ -87,10 +87,15 @@
 
 
 ?>
-</div>
-<?php include 'footer.php'; ?>
-</div>
 
-</main>
+
+
+      </main>
+
+    <footer class="footer">
+    <?php include 'footer.php'; ?>
+    </footer>
+
+  </div>
 </body>
 </html>

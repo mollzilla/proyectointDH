@@ -58,12 +58,13 @@
           }
         ?>
 
-<div class="admin-footer p-5 mt-5" >
-
-</div>
-
 
       </main>
+
+      <div class="admin-footer p-5 mt-5" >
+
+      </div>
+
     </div>
   </body>
 </html>
