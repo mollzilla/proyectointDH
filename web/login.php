@@ -16,7 +16,7 @@
 
 <nav>
   <?php
-  $seccion = "Login"
+  $seccion = "Login";
   include "./header.php"; /* para incluir la botonera de navegacion*/
   ?>
 </nav>

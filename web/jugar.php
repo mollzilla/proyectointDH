@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/ranking.css">
+    <link rel="stylesheet" href="./css/jugar.css">
 
 <!--Queria los de Ionicon pero traje todos por las dudas de que quiera usarlos en algun momento -->
     <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
@@ -24,7 +24,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <!--End of Queria los de Ionicon pero traje todos por las dudas de que quiera usarlos en algun momento -->
 
-    <title>Ranking!</title>
+    <title>A jugar!</title>
   </head>
 
   <body>
@@ -60,8 +60,12 @@
         //if (isset($_POST)) { //si se mando algo... ?>
             <!-- <input type="checkbox" id="letra" name="<?=$_POST["$v"]?>" value="<?=$_POST["$v"] // la letra que fue enviada va a estar checkeada o sea...?>" checked>
             <?php //} fin del if. else { ?>
-        --><label for="letra"><?=$v?></label>
-        <input type="checkbox" id="letra" name="<?=$v?>" value="<?=$v?>"> <?PHP
+        -->
+        <input type="checkbox" class="botoncito-check d-none"  id="<?=$v?>" name="letra[]" value="<?=$v?>">
+        <label for="<?=$v?>" class="text-uppercase botoncito-letra"><?=$v?></label>
+         <?PHP
+      } if (isset($_POST)) {
+        var_dump($_POST["letra"]);
       } ?>
 
 
