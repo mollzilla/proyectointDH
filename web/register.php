@@ -27,7 +27,7 @@
   </head>
   <body>
 
-<main class="container bg-light">
+<main class="container bg-light col-lg-6 offset-lg-3 col-md-8 offset-md-2">
 
 <nav>
 
