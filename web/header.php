@@ -24,7 +24,7 @@ global $nombreDelJueguito;
 global $seccion;
 
 $botones = ["Home" => "home.php",
- "Login" => "#",
+ "Login" => "login.php",
  "Registrarse" => "register.php",
  "Mi Perfil" => "usuarios.php",
  "Preguntas Frecuentes" => "faq.php",
