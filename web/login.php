@@ -25,7 +25,7 @@
   <div class="bg-tarjetita pt-5 pb-5 ">
 
   </div>
-
+<main class="main p-4 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
 
 <h2 class="pt-4 pb-4"class="titulo_login">Ingresá tus datos</h2>
   <form class="form-login" action="login.php" method="post">
@@ -38,6 +38,7 @@
 <h3>Olvidaste tu contraseña?</h3>
 <a href="./cambiarpassword.php">hacé click acá</a>
 
+  </main>
 
 <footer>
   <?php
