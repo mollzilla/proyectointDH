@@ -5,3 +5,17 @@
 .admin-footer {
   background-image: url(../img/admin-pixels-abajo2.png);
 }
+
+tr {
+  overflow: hidden;
+}
+
+@media (max-width: 400px) {
+  table, tbody, tr, th, td {
+    display: block;
+  }
+
+  .boton-agregar  {
+    width: 100%;
+}
+}

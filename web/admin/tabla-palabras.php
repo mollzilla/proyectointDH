@@ -25,13 +25,13 @@
 
   <main class="main p-2 row">
     <div class="titulos text-center pt-4">
-      <h2>Panel de Administrador</h2>
-      <h3>Palabras</h3>
+      <h2 class="titulo">Panel de Administrador</h2>
+      <h3 class="titulo">Palabras</h3>
     </div>
 
     <div class="col-12 text-center mb-4">
     <br>
-    <button type="button" class="mr-3 my-2  btn btn-primary" name="agregar"><a href="./nueva-palabra.php" class="text-light">Agregar Palabra</a></button>
+    <button type="button" class="boton-agregar mr-3 my-2  btn btn-primary" name="agregar"><a href="./nueva-palabra.php" class="text-light">Agregar Palabra</a></button>
     </div>
 
 <?php
@@ -55,7 +55,7 @@ $palabras = [
 <div class="col-12 col-lg-10 offset-lg-1">
 
 
-<table class="table table-striped">
+<table class="tabla table table-striped">
   <tr>
   <th>Palabras</th><th>Categoria</th><th>Acciones</th>
   </tr>
