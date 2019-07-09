@@ -31,7 +31,7 @@
 
     <div class="col-12 text-center mb-4">
     <br>
-    <button type="button" class="btn btn-primary" name="agregar"><a href="./nueva-palabra.php" class="text-light">Agregar Palabra</a></button>
+    <button type="button" class="mr-3 my-2  btn btn-primary" name="agregar"><a href="./nueva-palabra.php" class="text-light">Agregar Palabra</a></button>
     </div>
 
 <?php

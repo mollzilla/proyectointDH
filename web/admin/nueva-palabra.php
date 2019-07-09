@@ -36,7 +36,7 @@
             </div>
 
             <div class="form-group">
-                <label for="Catetgoria">Categoria: </label>
+                <label for="Categoria">Categoria: </label>
                 <select class="custom-select" name="">
                   <option value="1" id="categoria">Naturaleza</option>
                 </select>
