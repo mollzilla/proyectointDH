@@ -13,10 +13,9 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/admin.css">
     <title>Panel de Administrador - Ingresar Nueva Palabra</title>
-  </head>
-  <body>
-<body>
 
+</head>
+<body>
 
 <div class="container bg-light">
 
@@ -25,57 +24,42 @@
 
   <main class="main p-2 row">
     <div class="titulos text-center pt-4">
-      <h2>Panel de Administrador</h2>
-      <h3>Palabras</h3>
+      <h2 class="titulo">Panel de Administrador</h2>
+      <h3 class="titulo">Palabras</h3>
     </div>
 
     <div class="col-12 text-center mb-4">
-    <br>
-    <button type="button" class="mr-3 my-2  btn btn-primary" name="agregar"><a href="./nueva-palabra.php" class="text-light">Agregar Palabra</a></button>
+      <br>
+      <button type="button" class="boton-agregar mr-3 my-2  btn btn-primary" name="agregar"><a href="./nueva-palabra.php" class="text-light">Agregar Palabra</a></button>
     </div>
 
 <?php
 
-$palabras = [
-"pino" => "Naturaleza",
-"cima" => "Naturaleza",
-"arco" => "Objetos",
-"vena" => "Humanidad",
-"loca" => "Humanidad",
-"sino" => "Humanidad",
-"copa" => "Objetos",
-"mago" => "Humanidad",
-"urna" => "Objetos"
-]
+// proyecto de traer las palabras del json
+$palabrasEnJson = file_get_contents("palabras.json"); //me traigo las palabras guardadas
+$palabrasDecodeadas = json_decode($palabrasEnJson); //las decodeo  ?>
 
+        <div class="col-12 col-lg-10 offset-lg-1">
 
+          <table class="tabla table table-striped">
+            <tr>
+            <th>Palabras</th><th>Categoria</th><th>Acciones</th>
+            </tr>
+              <?php foreach ($palabrasDecodeadas as $arrayPalabra) { //recorro el array
+              foreach ($arrayPalabra as $categoria => $nombre) { ?>
+            <tr>
+              <td><?=$nombre?></td><td><?=$categoria?></td>
+                <td><button type="button" class="mr-3 my-2 btn btn-primary" name="modificar">Modificar</button><button type="button" class="btn btn-danger my-2" name="quitar">Quitar</button></td>
+            </tr>
+              <?php } } ?>
+          </table>
 
- ?>
-
-<div class="col-12 col-lg-10 offset-lg-1">
-
-
-<table class="table table-striped">
-  <tr>
-  <th>Palabras</th><th>Categoria</th><th>Acciones</th>
-  </tr>
-<?php foreach ($palabras as $nombre => $categoria) : ?>
-  <tr>
-    <td><?=$nombre?></td><td><?=$categoria?></td>
-      <td><button type="button" class="mr-3 my-2 btn btn-primary" name="modificar">Modificar</button><button type="button" class="btn btn-danger my-2" name="quitar">Quitar</button></td>
-  </tr>
-<?php endforeach; ?>
-</table>
-
-</div>
-
+        </div>
 
       </main>
 
-
-            <div class="admin-footer p-5 mt-5" >
-
-            </div>
+      <div class="admin-footer p-5 mt-5" >
+      </div>
 
     </div>
   </body>

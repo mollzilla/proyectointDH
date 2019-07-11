@@ -68,10 +68,13 @@
    <label for="confirmar" class='text-dark'>Confirmar Contraseña:</label>
    <input type="password" name="confirmar" id="confirmar" class="form-control" required>
    <br>
+   <label for="alias" class='text-dark'>Alias:</label>
+   <input type="text" name="alias" id="alias" class="form-control">
+   <br>
    <label for="avatar" class='text-dark'>Elige una Imagen</label>
    <input type="file" name="avatar" id="avatar" value="" required>
    <br>
-   <input type="submit" value="Registrarse" class="btn btn-primary mt-2 mb-2">
+      <input type="submit" value="Registrarse" class="btn btn-primary mt-2 mb-2">
 
  </form>
 
