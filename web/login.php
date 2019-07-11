@@ -42,13 +42,14 @@
 
 <footer>
   <?php
-  $seccion = "Contacto";
+
   include "./footer.php";
   ?>
+
 </footer>
 
 </div>
-?>
+
 
 
 
@@ -58,20 +59,39 @@
 
 <?php
 if($_POST){
+$email = $_POST["email"] ;
+$password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+
 //traigo los datos del usuario, de un archivo que me pasó Mili
-$datoslogin = file_get_contents("datosjson.json");
+$datoslogin = file_get_contents("archivo.txt");
 //decodifico los datos traídos a través de json.
 $logindecod = json_decode($datoslogin, true);
 //una vez convertidos los datos en un array, lo recorro buscando las posiciones üsuario y contraseña
 foreach ($logindecod as $usuario) {
+  $emailcorrecto = false;
+  $passwordcorrecto = false;
     foreach ($usuario as $datos => $valor){
        if ($datos=="email" && $_POST["email"]==$valor) {
-         echo "el mail es correcto";
-//si los datos guardaddos y los traídos del formularios son iguales
-       }// cierra el if
-     }//fin del foreach anidado
-   }//fin del foreach ppal
-}// fin if post
+         $emailcorrecto = true;
+       }
+       if($datos == "password"){
+         echo $valor;
+         echo "<br>";
+         echo "password: ". $password;
+         echo "<br>";
+         echo $_POST["password"];
+       }
+       if ($datos == "password" && password_hash($_POST["password"], PASSWORD_DEFAULT) ==$valor){
+         $passwordcorrecto = true;
+         echo "password correcto";
+       }
+
+       }//fin del foreach anidado
+       if($emailcorrecto && $passwordcorrecto )
+       echo "adelante";
+   }
+   echo "usuario no existe";//fin del foreach ppal
+}// fin if post, valido acá usuario y contraseña porque pertenecen al mismo usuario.
 
 
 

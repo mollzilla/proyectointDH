@@ -35,7 +35,7 @@
   </div>
 <ul class="list-group">
   <h3 class="text-center font-weight-bold">Amigos</h3>
-  <img style="width:100px;"src=".\img\faces\face2.jpg" class="img-fluid rounded-circle my-3" alt="">
+  <img style="width:100px;"src=".\img\faces\face2.jpg" class= "img-fluid rounded-circle my-3" alt="">
 <li class="list-group-item my-2"></li>
   <img style="width:100px;"src=".\img\faces\face3.jpg" class="img-fluid rounded-circle my-3" alt="">
 <li class="list-group-item my-2"></li>

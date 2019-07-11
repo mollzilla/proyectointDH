@@ -1,1 +1,1 @@
-[{"password":"$2y$10$qtb9g0gsO1G8qpBLpRtCbODYqH1W0qAuPLEG0iyGW0zLiElYa4xyW","nombre":"milili","email":"gomili@hotmail.com","avatar":"","id":0}]
+[{"password":"$2y$10$qtb9g0gsO1G8qpBLpRtCbODYqH1W0qAuPLEG0iyGW0zLiElYa4xyW","nombre":"milili","email":"gomili@hotmail.com","avatar":"","id":0},{"password":"$2y$10$e8ByoKkFnb8Br2kF04CUCOp5i7DQ\/Yb1CVOY7gZtq.0C\/z4ML59fS","nombre":"mariana","email":"marianatreglos@gmail.com","avatar":"margee.jpg","id":1}]
