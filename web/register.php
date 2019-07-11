@@ -72,7 +72,7 @@
    <input type="text" name="alias" id="alias" class="form-control">
    <br>
    <label for="avatar" class='text-dark'>Elige una Imagen</label>
-   <input type="file" name="avatar" id="avatar" value="" required>
+   <input type="file" name="avatar" id="avatar" value="">
    <br>
       <input type="submit" value="Registrarse" class="btn btn-primary mt-2 mb-2">
 
@@ -194,12 +194,14 @@ if (count($errores) > 0) {
         $datosEnJson = json_encode($usuariosDecodeados);
         //Ahora guardo en el archivo la array encodeada
         file_put_contents("archivo.txt", $datosEnJson);
-        echo "Gracias Por completar tus datos";
+        echo "Gracias Por completar tus datos! tu usuario ha sido generado con exito";
     }
-}
-    else {
+
+    if (!isset($_POST["password"]) || !isset($_POST["email"]) || !isset($_POST["nombre"]) ) {
     echo " <br>Por favor completa los datos que solicita el formulario";
     }
+}
+
 
 
 ?>

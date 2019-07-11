@@ -75,7 +75,7 @@
 
 <div class="col text-center">
   <button type="button" class="btn btn-outline-primary"><a href="./ranking.php">Ranking</a></button>
-  <button type="button" class="btn btn-outline-primary"><a href="">Panel Administrador</a></button>
+  <button type="button" class="btn btn-outline-primary"><a href="./admin/tabla-palabras.php">Panel Administrador</a></button>
 </div>
 
 <div class="row">
