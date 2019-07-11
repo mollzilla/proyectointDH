@@ -68,8 +68,15 @@
         <img src=".\img\pixelated-fruits.jpg" class="img-fluid" alt="">
       </div>
 
+
 </div>
+
 <?php endfor; ?>
+
+<div class="col text-center">
+  <button type="button" class="btn btn-outline-primary"><a href="./ranking.php">Ranking</a></button>
+  <button type="button" class="btn btn-outline-primary"><a href="">Panel Administrador</a></button>
+</div>
 
 <div class="row">
 

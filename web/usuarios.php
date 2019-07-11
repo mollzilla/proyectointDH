@@ -28,7 +28,7 @@
   <div class="contenedor-imagen">
     <img  style="width:320px;display:block;" src=".\img\faces\face1.jpg" class="img-fluid rounded-circle rounded-sm my-3" alt="">
     <ul class="list-group">
-  <li class="list-group-item my-2">Bienvenido Juan Lorem!!!</li>
+  <li class="list-group-item my-2">Bienvenido JUAN LOREM!!!</li>
   <li class="list-group-item my-2">E-mail</li>
   <li class="list-group-item my-2">Estado</li> <!--Acá será editable para que pueda escribir un estado-->
 </ul>
@@ -36,12 +36,13 @@
 <ul class="list-group">
   <h3 class="text-center font-weight-bold">Amigos</h3>
   <img style="width:100px;"src=".\img\faces\face2.jpg" class="img-fluid rounded-circle my-3" alt="">
-<li class="list-group-item my-2"></li>
+<li class="list-group-item my-2">PEDRO IPSUM</li>
   <img style="width:100px;"src=".\img\faces\face3.jpg" class="img-fluid rounded-circle my-3" alt="">
-<li class="list-group-item my-2"></li>
+<li class="list-group-item my-2">ROBERTO DOLOR</li>
   <img style="width:100px;"src=".\img\faces\face4.jpg" class="img-fluid rounded-circle my-3" alt="">
-<li class="list-group-item my-2"></li>
+<li class="list-group-item my-2">CHICHINA SIT</li>
 </ul>
+<br>
 <h3 class="text-center font-weight-bold">Ranking</h3>
 <ul class="list-group">
 <li class="list-group-item my-2"><a href="./ranking.php">Conocer mi Lugar</a> </li>
