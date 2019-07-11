@@ -1,1 +1,1 @@
-[{"password":"$2y$10$qtb9g0gsO1G8qpBLpRtCbODYqH1W0qAuPLEG0iyGW0zLiElYa4xyW","nombre":"milili","email":"gomili@hotmail.com","avatar":"","id":0}]
+[{"password":"$2y$10$qtb9g0gsO1G8qpBLpRtCbODYqH1W0qAuPLEG0iyGW0zLiElYa4xyW","nombre":"milili","email":"gomili@hotmail.com","avatar":"","id":0},{"password":"$2y$10$Q.7lk53Bkl10xpyX1tydLeGP5QcGktGeQkmJku6.X79NsOlL.gpZS","nombre":"mililia","email":"Lorem@impsum.com","avatar":"","id":1}]

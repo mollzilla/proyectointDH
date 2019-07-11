@@ -80,10 +80,11 @@
         } else {
             echo "Gracias! En Breve nos comunicaremos con vos";
         }
+        if (!isset($_POST["nombre"]) || !isset($_POST["email"]) || !isset($_POST["consulta"]) ) {
+        echo " <br>Por favor completa los datos que solicita el formulario";
+        }
     }
-        else { ?>
-        <p class="text-center text-danger">Por favor completa los datos que solicita el formulario</p>
-        <?php }
+
 
 
 ?>
