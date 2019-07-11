@@ -97,6 +97,10 @@
     <?php include 'footer.php'; ?>
     </footer>
 
+    <div class="bg-fondito pt-5 pb-5 ">
+
+    </div>
+
   </div>
 </body>
 </html>
