@@ -25,19 +25,20 @@
   <div class="bg-tarjetita pt-5 pb-5 ">
 
   </div>
-
+<main class="main p-4 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
 
 <h2 class="pt-4 pb-4"class="titulo_login">Ingresá tus datos</h2>
   <form class="form-login" action="login.php" method="post">
     <label for="">email</label><br>
-    <input class="form-control"type="email" name="email" value=""><br>
+    <input class="form-control"type="email" name="email" value=""required><br>
     <label class="text-dark" for="">password</label><br>
-    <input class="form-control" type="password" name="password" value=""><br>
+    <input class="form-control" type="password" name="password" value=""required><br>
     <input class="btn btn-primary mt-2 mb-2" type="submit" name="" value="enviar"><br>
   </form>
 <h3>Olvidaste tu contraseña?</h3>
 <a href="./cambiarpassword.php">hacé click acá</a>
 
+  </main>
 
 <footer>
   <?php

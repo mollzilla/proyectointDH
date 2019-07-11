@@ -29,16 +29,17 @@
       <h3>Ingresar Nueva Palabra</h3>
     </div>
 
-    <form action="tabla-palabras.php" method="POST">
+    <form action="nueva-palabra.php" method="POST">
             <div class="form-group">
               <label for="nombre">Palabra: </label>
-              <input type="text" id="palabra" name="palabra" class="form-control" value="<?= $_POST? $_POST["nombre"] : ''; ?>" required> <br>
+              <input type="text" id="palabra" name="palabra" class="form-control" value="<?= $_POST? $_POST["palabra"] : ''; ?>" required> <br>
             </div>
 
             <div class="form-group">
-                <label for="Catetgoria">Categoria: </label>
-                <select class="custom-select" name="">
-                  <option value="1" id="categoria">Naturaleza</option>
+                <label for="Categoria">Categoria: </label>
+                <select class="custom-select" id="categoria" name="categoria">
+                  <option value="naturaleza">Naturaleza</option>
+                  <option value="humanidad">Humanidad</option>
                 </select>
             </div>
 
@@ -47,16 +48,49 @@
 
     </form>
 
-<?php
 
 
-    if (isset($_POST)) {
-            echo "Gracias! Palabra correctamente recibida";
-        } else { ?>
-          <p class="text-center text-danger">Por Favor Ingresa una palabra</p>
-        <?php //tengo un error, siempre me manda el mensaje como si hubiera mandado algo
-          }
-        ?>
+
+      <?php //validacion de preexistencia de palabra ingresada
+
+if ($_POST) {
+
+
+    $palabrasEnJson = file_get_contents("palabras.json"); //me traigo las palabras guardadas
+    $palabrasDecodeadas = json_decode($palabrasEnJson); //las decodeo
+
+    foreach ($palabrasDecodeadas as $arrayPalabra) { //recorro el array para ver si se repiten
+      $errores = [];
+      foreach ($arrayPalabra as $categoria => $palabra) {
+        if ($palabra == $_POST["palabra"]) {
+          $errores[] = "Esa palabra ya existe"; //guardo el error
+        }
+      }
+    }
+
+    if (strlen($_POST["palabra"]) > 4 || strlen($_POST["palabra"]) < 4) {
+        $errores[] = "La longitud de la palabra es incorrecta. Por favor, ingresa una palabra de 4 letras";
+    }
+
+    if (empty($errores)) {$palabrasDecodeadas[] = [$_POST["categoria"] => $_POST["palabra"]];
+      $palabrasEnJson = json_encode($palabrasDecodeadas);
+
+      file_put_contents("palabras.json", $palabrasEnJson);
+      echo "Gracias! palabra recibida";}
+    else { ?>
+      <ul>
+      <?php foreach ($errores as $error) { ?>
+          <li><?=$error?></li>
+      <?php }; ?>
+        </ul>
+
+
+          <?php } }?>
+
+
+
+
+
 
 
       </main>
