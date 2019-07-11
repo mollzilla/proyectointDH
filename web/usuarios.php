@@ -35,13 +35,8 @@
   </div>
 <ul class="list-group">
   <h3 class="text-center font-weight-bold">Amigos</h3>
-<<<<<<< HEAD
-  <img style="width:100px;"src=".\img\faces\face2.jpg" class= "img-fluid rounded-circle my-3" alt="">
-<li class="list-group-item my-2"></li>
-=======
   <img style="width:100px;"src=".\img\faces\face2.jpg" class="img-fluid rounded-circle my-3" alt="">
 <li class="list-group-item my-2">PEDRO IPSUM</li>
->>>>>>> c613052ebc9a9066196389b50628fdbbe57c6dbf
   <img style="width:100px;"src=".\img\faces\face3.jpg" class="img-fluid rounded-circle my-3" alt="">
 <li class="list-group-item my-2">ROBERTO DOLOR</li>
   <img style="width:100px;"src=".\img\faces\face4.jpg" class="img-fluid rounded-circle my-3" alt="">
@@ -68,6 +63,8 @@
 <footer>
 <?php include 'footer.php'; ?>
 </footer>
+<div class="bg-fondito pt-5 pb-5 ">
+</div>
 
     </div>
   </body>

@@ -48,6 +48,8 @@
     <h2>aca va la palabra secreta!!!</h2>
     <h2>_ _ _ _</h2>
   </div>
+  <div class="bg-fondito pt-5 pb-5 ">
+  </div>
 
   <form class="" action="jugar.php" method="post">
     <label for="palabra">Tu Propuesta</label><br>

@@ -28,6 +28,8 @@
   <body>
 <body>
 <div class="container bg-light">
+  <div class="bg-fondito pt-5 pb-5 ">
+  </div>
 
 <nav>
   <?php
