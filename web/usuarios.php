@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css?family=Sigmar+One|Work+Sans:900&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/main.css">
+
     <title>Hello, world!</title>
   </head>
   <body>
@@ -26,7 +27,7 @@
 
   <h1 class="text-center font-weight-bold">Mi Perfil</h1>
   <div class="contenedor-imagen">
-    <img  style="width:320px;display:block;" src=".\img\faces\face1.jpg" class="img-fluid rounded-circle rounded-sm my-3" alt="">
+    <img src=".\img\faces\face1.jpg" class="imagen-usuario img-fluid rounded-circle rounded-sm my-3" alt="">
     <ul class="list-group">
   <li class="list-group-item my-2">Bienvenido JUAN LOREM!!!</li>
   <li class="list-group-item my-2">E-mail</li>
@@ -35,11 +36,11 @@
   </div>
 <ul class="list-group">
   <h3 class="text-center font-weight-bold">Amigos</h3>
-  <img style="width:100px;"src=".\img\faces\face2.jpg" class="img-fluid rounded-circle my-3" alt="">
+  <img src=".\img\faces\face2.jpg" class="rounded-circle imagen-amigos my-3" alt="">
 <li class="list-group-item my-2">PEDRO IPSUM</li>
-  <img style="width:100px;"src=".\img\faces\face3.jpg" class="img-fluid rounded-circle my-3" alt="">
+  <img src=".\img\faces\face3.jpg" class="rounded-circle imagen-amigos my-3" alt="">
 <li class="list-group-item my-2">ROBERTO DOLOR</li>
-  <img style="width:100px;"src=".\img\faces\face4.jpg" class="img-fluid rounded-circle my-3" alt="">
+  <img src=".\img\faces\face4.jpg" class="rounded-circle imagen-amigos my-3" alt="">
 <li class="list-group-item my-2">CHICHINA SIT</li>
 </ul>
 <br>

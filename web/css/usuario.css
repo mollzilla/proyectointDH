@@ -76,3 +76,9 @@ div ion-icon {
   text-decoration: none;
   color: black;
 }
+
+img.avatar-thumbnail {
+  width: 150px;
+  height: 150px;
+
+}

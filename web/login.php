@@ -30,7 +30,7 @@
 <h2 class="pt-4 pb-4"class="titulo_login">Ingresá tus datos</h2>
   <form class="form-login" action="login.php" method="post">
     <label for="">email</label><br>
-    <input class="form-control"type="email" name="email" value=""required><br>
+    <input class="form-control"type="email" name="email" value="<?= $_POST? $_POST["email"] : '' required><br>
     <label class="text-dark" for="">password</label><br>
     <input class="form-control" type="password" name="password" value=""required><br>
     <input class="btn btn-primary mt-2 mb-2" type="submit" name="" value="enviar"><br>

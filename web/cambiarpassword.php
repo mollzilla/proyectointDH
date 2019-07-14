@@ -45,7 +45,7 @@
       <input type="password" class="form-control" name="password" required>
       <br>
       <label for="password" class='text-dark'>Nueva Contraseña:</label>
-      <input type="password" class="form-control" name="password" required>
+      <input type="password" class="form-control" name="new-password" required>
       <br>
       <label for="confirmar" class='text-dark'>Confirmar Nueva Contraseña:</label>
       <input type="password" class="form-control" name="confirmar" required>
@@ -66,14 +66,16 @@
 
       // echo "Gracias! tu contrasena fue modificada con exito";
     } ?>
+      </div>
+    </div>
 
     <footer>
       <?php include 'footer.php'; ?>
-    </footer>
         <div class="bg-fondito pt-5 pb-5 ">
         </div>
-      </div>
-      </div>
+
+
+
     </div>
     </body>
     </html>
