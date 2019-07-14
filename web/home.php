@@ -28,19 +28,17 @@
   <body>
 <body>
 <div class="container bg-light">
-  <div class="bg-fondito pt-5 pb-5 ">
-  </div>
 
 <nav>
   <?php
     $seccion = "home";
     include "header.php"; /* para incluir la botonera de navegacion*/
   ?>
+  <div class="bg-tarjetita pt-5 pb-5">
+
 </nav>
 
 
-  <div class="bg-tarjetita pt-5 pb-5">
-  </div>
 
 
     <h1 class= "text-center pt-3 m-0 titulo-jueguito text-wrap"><?= $nombreDelJueguito ?></h1>
@@ -99,10 +97,10 @@
 <footer>
 <?php include 'footer.php'; ?>
 </footer>
+<div class="bg-fondito pt-5 pb-5 ">
+</div>
 
-
-
-
+</div>
 
 </div>
 
