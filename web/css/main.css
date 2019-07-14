@@ -88,3 +88,15 @@ div ion-icon {
   text-decoration: none;
   color: black;
 }
+
+.imagen-amigos {
+  width: 150px;
+  height: 150px;
+}
+
+.imagen-usuario {
+  display: block;
+  width: 320px;
+  height: 320px;
+
+}
