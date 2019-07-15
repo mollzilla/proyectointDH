@@ -311,8 +311,8 @@
    <label for="confirmar" class='text-dark'>Confirmar Contraseña:</label>
    <input type="password" name="confirmar" id="confirmar" class="form-control" required>
    <br>
-   <label for="alias" class='text-dark'>Alias:</label>
-   <input type="text" name="alias" id="alias" class="form-control" value="<?= $_POST? $_POST["alias"] : '';?>">
+   <label for="usuario" class='text-dark'>Nombre de Usuario:</label>
+   <input type="text" name="usuario" id="usuario" class="form-control" value="<?= $_POST? $_POST["usuario"] : '';?>">
    <br>
    <label for="avatar" class='text-dark'>Elige una Imagen</label><br>
    <img src="./img/avatar-sample.png" alt="" style="width:100px;" class="my-2">
