@@ -87,19 +87,23 @@ $jugadoresRankeados = [
 
 <?php endforeach; ?>
 </div>
+<div class="bg-fondito pt-5 pb-5 ">
+</div>
 
 </div>
   <div class="footer">
 
+
   <nav>
     <?php include 'footer.php'; ?>
+
   </nav>
 
   </div>
 
 </main>
-</div>
-<div class="bg-fondito pt-5 pb-5 ">
+
+
 </div>
 
 </body>
