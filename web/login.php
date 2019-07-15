@@ -30,31 +30,18 @@
 <h2 class="pt-4 pb-4"class="titulo_login">Ingresá tus datos</h2>
   <form class="form-login" action="login.php" method="post">
     <label for="">email</label><br>
-    <input class="form-control"type="email" name="email" value="<?= $_POST? $_POST["email"] : '' required><br>
+    <input class="form-control"type="email" name="email" value="<?= $_POST? $_POST["email"] : '' ?>" required><br>
     <label class="text-dark" for="">password</label><br>
     <input class="form-control" type="password" name="password" value=""required><br>
     <input class="btn btn-primary mt-2 mb-2" type="submit" name="" value="enviar"><br>
   </form>
 <h3>Olvidaste tu contraseña?</h3>
-<a href="./cambiarpassword.php">hacé click acá</a>
-
-  </main>
+<a href="./forgotpassword.php">hacé click acá</a>
 
 
 
 
 
-<footer>
-  <?php
-
-  include "./footer.php";
-  ?>
-
-</footer>
-<div class="bg-fondito pt-5 pb-5 ">
-</div>
-
-</div>
 
 
 
@@ -66,7 +53,8 @@
 <?php
 if($_POST){
 $email = $_POST["email"] ;
-$password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+$password = /*password_hash*/($_POST["password"]/*, PASSWORD_DEFAULT*/); //por ahora lo comento voy a intentarlo sin hashear
+
 
 //traigo los datos del usuario, de un archivo que me pasó Mili
 $datoslogin = file_get_contents("archivo.txt");
@@ -76,29 +64,38 @@ $logindecod = json_decode($datoslogin, true);
 foreach ($logindecod as $usuario) {
   $emailcorrecto = false;
   $passwordcorrecto = false;
+  $nombrecorrecto = "";
     foreach ($usuario as $datos => $valor){
        if ($datos=="email" && $_POST["email"]==$valor) {
          $emailcorrecto = true;
        }
-       if($datos == "password"){
-         echo $valor;
-         echo "<br>";
-         echo "password: ". $password;
-         echo "<br>";
-         echo $_POST["password"];
+       if ($datos=="nombre") {
+         $nombrecorrecto = $valor;
        }
-       if ($datos == "password" && password_hash($_POST["password"], PASSWORD_DEFAULT) ==$valor){
+
+       if ($datos == "password" && password_verify($_POST["password"], $valor)) {
          $passwordcorrecto = true;
-         echo "password correcto";
        }
 
        }//fin del foreach anidado
-       if($emailcorrecto && $passwordcorrecto )
-       echo "adelante";
+       if($emailcorrecto && $passwordcorrecto ) { ?>
+        <h5 class='p-2 text-center'>Bienvenido <?=$nombrecorrecto?> !! Cuando la pagina este mas armada, te abrimos una session</h5> <?php }
    }
-   echo "usuario no existe";//fin del foreach ppal
-}// fin if post, valido acá usuario y contraseña porque pertenecen al mismo usuario.
-
-
+   //fin del foreach ppal
+   if (isset($_POST) && (!$passwordcorrecto || !$emailcorrecto)) { ?>
+     <h5 class='text-danger p-2 text-center'>El nombre de Usuario o passwrod son incorrectos. Por favor intentalo nuevamente</h5>
+   <?php } }// fin if post, valido acá usuario y contraseña porque pertenecen al mismo usuario.
 
  ?>
+  </main>
+ <footer>
+   <?php
+
+   include "./footer.php";
+   ?>
+
+ </footer>
+ <div class="bg-fondito pt-5 pb-5 ">
+ </div>
+
+ </div>
