@@ -36,25 +36,25 @@
 
 
 <h2 class="text-info">Olvido de  Contraseña</h2>
-  <div class="form-group col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-    <form class="" action="thankyoupass.php" method="post">
-      <label for="email" class='text-dark'>Ingresa tu E-mail:</label>
-      <input type="text" name="email" class="form-control" value="gomili@hotmail.com" readonly>
-      <br>
-      <input type="submit" name="enviar" class="btn btn-primary" value="Enviar nueva contraseña">
-    </form>
+    <?php
 
-    <?php if ($_POST) {
+/* if(isset($_POST)){
+    $to = $_POST['email']; // this is your Email address
+    $from = "eymili@gmail.com"; // this is the sender's Email address
+    $username = /*$_POST['usuario'] tengo que terminar de entender como funciona esto "Pepito";
+    $subject = "Tu password provisorio";
+    $headers = "El Jueguito Mailing Service";
+    $message = "Hola! te escribimos porque solicitaste resetear tu password. Este password provisorio tendrá una validez de una hora:";
+    mail($to,$subject,$message, $headers);
+    */
+    // You can also use header('Location: thank_you.php'); to redirect to another page.}
 
-    //traigo los datos
-    //los decodifico
-    //recorro el array con un for
-    //cuando encuentro el que busco con el mail, envio un mail
-    //que ese mail contenga un link a un reset pass o una contrasenia provisoria
-    // echo "Te enviamos un mail con una contraseña provisoria";
-    } ?>
-      </div>
-    </div>
+?>
+
+</div>
+
+<br><br> <p class="text-center text-info">Se envio un mail con tu password provisorio</p>
+</div>
 
     <footer>
       <?php include 'footer.php'; ?>
