@@ -29,9 +29,9 @@
   <div class="contenedor-imagen">
     <img src=".\img\faces\face1.jpg" class="imagen-usuario img-fluid rounded-circle rounded-sm my-3" alt="">
     <ul class="list-group">
-  <li class="list-group-item my-2">Bienvenido JUAN LOREM!!!</li>
-  <li class="list-group-item my-2">E-mail</li>
-  <li class="list-group-item my-2">Estado</li> <!--Acá será editable para que pueda escribir un estado-->
+  <li class="list-group-item my-2"><h5>Bienvenido JUAN LOREM!!!</h5></li>
+  <li class="list-group-item my-2"><h5>E-mail</h5></li>
+  <li class="list-group-item my-2"><h5>Estado</h5></li> <!--Acá será editable para que pueda escribir un estado-->
 </ul>
   </div>
 <ul class="list-group">
@@ -57,9 +57,6 @@
     <a href="./cambiarpassword.php" class="btn btn-primary mt-2 mb-2">Modificar mi contraseña</a>   <!-- tiene que linkear a cambiar contraseña -->
   </button>
 </div>
-
-
-
 
 <footer>
 <?php include 'footer.php'; ?>
