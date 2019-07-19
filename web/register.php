@@ -54,7 +54,7 @@
 
 </div>
 
- <form action="register.php" method="post">
+ <form action="register.php" method="post" enctype="multipart/form-data">
     <br>
    <label for="nombre" class='text-dark'>Nombre:</label>
    <input type="text" name="nombre" id="nombre" class="form-control" value="<?= $_POST? $_POST["nombre"] : '';?>"  required>
@@ -317,6 +317,7 @@
    <label for="avatar" class='text-dark'>Elige una Imagen</label><br>
    <img src="./img/avatar-sample.png" alt="" style="width:100px;" class="my-2">
    <input type="file" name="avatar" id="avatar">
+
    <label for="acepto" class='text-dark'>Acepto Términos y Condiciones</label>
    <input type="checkbox" name="acepto" id="acepto" name="acepto" id="acepto" class="d-inline" value="<?= $_POST? $_POST["acepto"] : '';?>"  required>
 <!--
@@ -374,23 +375,22 @@ $errores[]="La Contraseña debe tener una longitud de al menos 8 caracteres.";
 
 //------------------imagen en jpg jpeg png y peso del archivo (size <= 2mb)
 
-if ($_POST["avatar"]) {
-
-  $ext = pathinfo($_POST["avatar"], PATHINFO_EXTENSION);
+if ($_FILES["avatar"]) {
+var_dump($_FILES["avatar"]);
+  $ext = pathinfo($_FILES["avatar"]['name'], PATHINFO_EXTENSION);
     if ($ext !== "jpg" && $ext !== "jpeg" && $ext !== "png"){
       $errores[] = "El archivo ingresado no es un formato de imagen valido. Por favor intentalo nuevamente.";
     }
+VAR_DUMP($ext);
 
-
-// esto no me anda porque necesito el path del archivo? esto significa que lo
-// debo guardar antes de  compararlo?
-  echo filesize($_POST["avatar"]);
+  if ($_FILES["avatar"]['size'] > 2097152) {
+echo "bla";
+} else {echo "ble";}
 
 //propuesta de filtrar por tamanio
-/*
-if (filesize($_POST["avatar"]) >= 2097152){
+/* Aca deberia pedirle que haga esto, queda para la proxima
   $errores[] = "El archivo ingresado es demasiado grande. Por favor sube un archivo de 2mb o menor.";
-}
+
 */
 }
 
@@ -446,6 +446,7 @@ if (count($errores) > 0) {
         $datosEnJson = json_encode($usuariosDecodeados);
         //Ahora guardo en el archivo la array encodeada
         file_put_contents("archivo.txt", $datosEnJson);
+        move_uploaded_file($_FILES['avatar']['tmp_name'], 'file_upload/'.$_FILES['avatar']['name']);
         echo "Gracias Por completar tus datos! tu usuario ha sido generado con exito";
     }
 
