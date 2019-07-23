@@ -434,7 +434,7 @@ if (count($errores) > 0) {
         $datosAGuardar["password"] = password_hash($_POST["password"], PASSWORD_DEFAULT);
         $datosAGuardar["nombre"] = $_POST["nombre"];
         $datosAGuardar["email"] = $_POST["email"];
-        $datosAGuardar["avatar"] = $_POST["avatar"];
+        $datosAGuardar["avatar"] = $_FILES["avatar"];
         $datosAGuardar["id"] = count($usuariosDecodeados);
 
 

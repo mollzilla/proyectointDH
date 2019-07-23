@@ -76,10 +76,10 @@
 
     <div class="">
       <div class="hovereffect">
-        <img class="img-responsive" src="./img/social-people.jpg" alt="">
+        <img class="img-responsive" src="./img/press-start.jpg" alt="">
         <div class="overlay">
-          <h2 class="a-jugar">A JUGAR!!!</h2>
-				  <p><a href="#">Click Aqui!</a></p>
+          <h2 class="a-jugar">A JUGAR</h2>
+				  <p><a href="#">Click Aqui Para empezar!</a></p>
         </div>
       </div>
     </div>
@@ -91,7 +91,7 @@
 
         <div class="">
           <div class="hovereffect">
-            <img class="img-responsive" src="./img/social-people.jpg" alt="">
+            <img class="img-responsive" src="./img/press-start.jpg" alt="">
             <div class="overlay">
               <h2>A JUGAR!!!</h2>
     				  <p><a href="#">Click Aqui!</a></p>
@@ -104,11 +104,11 @@
         <div class="container col-lg-3 d-inline-flex flex-row" style="margin-top:30px;">
           <div class="row">
 
-            <div class="">
+            <div class="d-flex">
               <div class="hovereffect">
-                <img class="img-responsive" src="./img/social-people.jpg" alt="">
+                <img class="img-responsive" src="./img/press-start.jpg" alt="">
                 <div class="overlay">
-                  <h2>A JUGAR!!!</h2>
+                  <h2 class="align-items-end">A JUGAR!!!</h2>
         				  <p><a href="#">Click Aqui!</a></p>
                 </div>
               </div>
