@@ -16,12 +16,22 @@
 
 <nav>
   <?php
+
+//una manera de hacerlo seria que el include de las paginas este dentro de un IF que pregunte si el usuario esta logueado
+//-- if $_SESSION {include el otro header que no tenga esos dos botones}
+
   $seccion = "Login";
-  include "./header.php"; /* para incluir la botonera de navegacion*/
-  ?>
+
+            if(isset($_SESSION["email"])){
+              include "./header.php";
+            }else{
+              include "./header2.php";
+            }
+          ?>
+
 </nav>
 
-<div class="container bg-color-light">
+<div class="container bg-light">
   <div class="bg-tarjetita pt-5 pb-5 ">
 
   </div>
@@ -33,7 +43,7 @@
     <input class="form-control"type="email" name="email" value="<?= $_POST? $_POST["email"] : '' ?>" required><br>
     <label class="text-dark" for="">password</label><br>
     <input class="form-control" type="password" name="password" value=""required><br>
-    <input class="btn btn-primary mt-2 mb-2" type="submit" name="" value="enviar"><br>
+    <input class="rbtn btn-primary mt-2 mb-2" type="submit" name="" value="enviar"><br>
   </form>
 <h3>Olvidaste tu contraseña?</h3>
 <a href="./forgotpassword.php">hacé click acá</a>
