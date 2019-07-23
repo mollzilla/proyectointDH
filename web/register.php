@@ -376,12 +376,12 @@ $errores[]="La Contraseña debe tener una longitud de al menos 8 caracteres.";
 //------------------imagen en jpg jpeg png y peso del archivo (size <= 2mb)
 
 if ($_FILES["avatar"]) {
-var_dump($_FILES["avatar"]);
+
   $ext = pathinfo($_FILES["avatar"]['name'], PATHINFO_EXTENSION);
     if ($ext !== "jpg" && $ext !== "jpeg" && $ext !== "png"){
       $errores[] = "El archivo ingresado no es un formato de imagen valido. Por favor intentalo nuevamente.";
     }
-VAR_DUMP($ext);
+
 
   if ($_FILES["avatar"]['size'] > 2097152) {
 echo "bla";
