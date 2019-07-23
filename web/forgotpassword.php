@@ -44,15 +44,57 @@
       <input type="submit" name="enviar" class="btn btn-primary" value="Enviar nueva contraseña">
     </form>
 
-    <?php if ($_POST) {
+    <?php if (isset($_POST["enviar"])) {
+      //desde aca empieza generar la nueva contrasenia
+      $uppr_case="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      $lower_case="abcdefghijklmnopqrstuvwxyz";
+      $numbers="0123456789";
+      $special_chars="@#$%&*";
 
-    //traigo los datos
-    //los decodifico
-    //recorro el array con un for
-    //cuando encuentro el que busco con el mail, envio un mail
+      $generated_uppr_case=substr(str_shuffle($uppr_case),0,2);
+
+      $generated_lower_case=substr(str_shuffle($lower_case),0,2);
+
+      $generated_numbers=substr(str_shuffle($numbers),0,2);
+
+      $generated_special_chars=substr(str_shuffle($special_chars),0,2);
+
+      $mixed="$generated_uppr_case$generated_lower_case$generated_numbers$generated_special_chars";
+
+      $nuevaContrasenia=substr(str_shuffle($mixed),0,8);
+
+    //termina generacion de nueva contrasenia
+    //desde aca empieza el mail
+    $recipient = "";
+    $subject= "Tu contraseña provisoria de El Jueguito";
+    $message="<h2>Tu nueva Contraseña Provisoria de El Jueguito</h2>
+              <p>Hola! Estas recibiendo este mail porque solicitaste una contraseña provisoria de El Jueguito</p>
+              <p>Tu nueva contraseña es $nuevaContrasenia</p>";
+    $headers = "content-type:text/html\r\n";
+    $headers.="from=El Jueguito <eljueguito@eljueguito.com>";
+
+
+
+    $datosCodificados=file_get_contents("archivo.txt"); //traigo los datos
+    $datosDecodificados=json_decode($datosCodificados); //los decodifico
+    foreach ($datosDecodificados as $usuario) { //recorro el array con un for
+      foreach ($usuario as $key => $value) {
+        if ($key == "email" && $value == $_POST["email"]) {
+          //cuando encuentro el que busco con el mail, envio un mail
+          $recipient = $_POST["email"];
+
+        }
+      }
+
+                mail($recipient, $subject, $message, $headers);
+    }
+
+
+
+
     //que ese mail contenga un link a un reset pass o una contrasenia provisoria
     // echo "Te enviamos un mail con una contraseña provisoria";
-    } ?>
+    } //fin del if POST?>
       </div>
     </div>
 

@@ -333,23 +333,12 @@ Confirmar contraseña -->
 
 
 
-<!--
-
-
-Funciones
-que ninguno de los campos este vacio slvo el de avatar que no es requerido
-boton de borrar
-nombre  minimo 5 caracteres
-
--->
 <?php
 $errores = [];
 
 if ($_POST) {
 
-    // code...
-
-    if (strlen($_POST["nombre"]) < 5){
+    if (strlen($_POST["nombre"]) < 5){ //si el nombre tiene mas de 5 caracteres
   $errores[]= "El nombre de usuario debe tener al menos 5 Letras. Por favor, ingresa un nombre mas largo.";
 
  }
@@ -381,17 +370,9 @@ if ($_FILES["avatar"]) {
     if ($ext !== "jpg" && $ext !== "jpeg" && $ext !== "png"){
       $errores[] = "El archivo ingresado no es un formato de imagen valido. Por favor intentalo nuevamente.";
     }
-
-
-  if ($_FILES["avatar"]['size'] > 2097152) {
-echo "bla";
-} else {echo "ble";}
-
-//propuesta de filtrar por tamanio
-/* Aca deberia pedirle que haga esto, queda para la proxima
-  $errores[] = "El archivo ingresado es demasiado grande. Por favor sube un archivo de 2mb o menor.";
-
-*/
+  else if ($_FILES["avatar"]['size'] > 2097152) {
+    $errores[]="El tamaño de la imagen es mayor al permitido. Por favor elige una imagen más pequeña";
+  }
 }
 
 //esto esta mas arriba que el count de errores para poder comparar los datos ya guardados
@@ -405,8 +386,6 @@ $usuariosDecodeados = json_decode($usuariosEnJson, true);
 //Ahora guardo el ultimo usuario que me llego x $_POST al final de $usuariosDecodeados
 
 if (!empty($usuariosDecodeados)) {
-//el problema que tengo ahora es que siempre me dice que el email ya esta registrado,
-//aunque borre cada vez los datos de archivo.text
 
   foreach ($usuariosDecodeados as $usuario) {
     foreach ($usuario as $dato => $valor) {
@@ -417,19 +396,14 @@ if (!empty($usuariosDecodeados)) {
   }
 }
 
-
 if (count($errores) > 0) {
             ?><ul>
             <?php foreach ($errores as $error) { ?>
                 <li class='text-danger p-2 text-center'><?= $error?></li>
-    <?php } ?>
+            <?php } ?>
               </ul>
-    <?php
-    } else {
+<?php } else {
         $datosAGuardar = [];
-
-//hacer una funcion que guarde el archuvi xq ya se valido.... ACA ME PARECE QUE TENGO
-// QUE HACER QUE SEA UNA ARRAY ASOCIATIVA CON EL NOMBRE O ID COMO CLAVE
 
         $datosAGuardar["password"] = password_hash($_POST["password"], PASSWORD_DEFAULT);
         $datosAGuardar["nombre"] = $_POST["nombre"];
@@ -438,9 +412,6 @@ if (count($errores) > 0) {
         $datosAGuardar["id"] = count($usuariosDecodeados);
 
 
-
-        //el file_get_contents y el decodeo estan mas arriba para poder usarlos
-        // para comparar si hay otro usuario con el mismo id o mail
         $usuariosDecodeados[] = $datosAGuardar;
         //Ahora encodeo de nuevo lo que acabo de hacer a json
         $datosEnJson = json_encode($usuariosDecodeados);
@@ -449,48 +420,25 @@ if (count($errores) > 0) {
         move_uploaded_file($_FILES['avatar']['tmp_name'], 'file_upload/'.$_FILES['avatar']['name']);
         echo "Gracias Por completar tus datos! tu usuario ha sido generado con exito";
     }
+  }
 
-    if (!isset($_POST["password"]) || !isset($_POST["email"]) || !isset($_POST["nombre"]) ) {
+    else if (!isset($_POST["password"]) || !isset($_POST["email"]) || !isset($_POST["nombre"]) ) {
     echo " <br>Por favor completa los datos que solicita el formulario";
     }
-}
-
-
 
 ?>
 
 
-<!-- errores Datos q vamos a mandar a un array. Si el array esta vacio, esta bien
+</main>
 
-hash cuando lo voy a guardar
+<footer>
+  <?php include 'footer.php'; ?>
+</footer>
 
-procesar info para almacenar, en un json.
-
-Manipular el json, recorrer y captar la info que me pide el usuario para mostrarlos
-para recorrerlo y mostrar todos los usuarios, un foreach luego de decodificarlo
-
-el path de la foto se guarda en el json, despues para ir a buscar es dinamico (complejo)*/
-
-Utilizando los formularios de registro ya creados, register.php/.html agregarle
-funcionamiento para que pueda subir una imágen de perfil.
-Tener en cuenta que es necesario guardar junto con los datos del usuario el nombre del
-archivo para poder referenciar posteriormente. Se recomienda renombrar el archivo
-subido por el id del usuario. (En caso de no tenerlo aún, agregarle un id al usuario. El
-primero tendrá como id el número 1, el segundo el número 2 y así continuará la
-secuencia…). Si el email fuese un campo único, también podría utilizarse esto.
--->
-
-
-  </main>
-
-    <footer>
-    <?php include 'footer.php'; ?>
-    </footer>
-    <div class="bg-fondito pt-5 pb-5 ">
-    </div>
+<div class="bg-fondito pt-5 pb-5 ">
+</div>
 
   </div>
-
 
 </body>
 
