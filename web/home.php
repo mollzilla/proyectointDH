@@ -49,7 +49,7 @@
 
 <main>
 
-    <h1 class= "text-center py-3 m-0 titulo-jueguito text-wrap">Bienvenidos!!!</h1>
+    <h1 class= "text-center py-3 m-0 titulo-jueguito">Bienvenidos!!!</h1>
 
 <?php for ($i=0; $i < 2; $i++) :
 ?>
@@ -87,7 +87,7 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-12 col-md-6 col-lg-4">
+    <div class="col-12 col-md-6 col-lg-4 pb-3">
       <div class="hovereffect">
         <img class="img-responsive" src="./img/press-start.jpg" alt="">
         <div class="overlay">
@@ -97,19 +97,7 @@
       </div>
     </div>
 
-<!-- <div class="col-12 col-md-6 col-lg-4"
-    <div class="hovereffect">
-        <img class="img-responsive" src="http://placehold.it/350x250" alt="">
-            <div class="overlay">
-                <h2>Effect 12</h2>
-				<p>
-					<a href="#">LINK HERE</a>
-				</p>
-            </div>
-    </div>
-</div> -->
-
-    <div class="col-12 col-md-6 col-lg-4">
+    <div class="col-12 col-md-6 col-lg-4 pb-3">
       <div class="hovereffect">
         <img class="img-responsive" src="./img/press-start.jpg" alt="">
         <div class="overlay">
@@ -119,7 +107,7 @@
       </div>
     </div>
 
-    <div class="col-12 col-md-6 col-lg-4">
+    <div class="col-12 col-md-6 col-lg-4 pb-3">
       <div class="hovereffect">
         <img class="img-responsive" src="./img/press-start.jpg" alt="">
         <div class="overlay">
@@ -228,6 +216,10 @@
     </div>
   </div>
 
+  <div class="col text-center">
+    <button type="button" class="btn btn-outline-primary"><a href="./ranking.php">Ranking</a></button>
+    <button type="button" class="btn btn-outline-primary"><a href="">Panel Administrador</a></button>
+  </div>
 
 
 <div class="row">
