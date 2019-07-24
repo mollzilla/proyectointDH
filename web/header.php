@@ -1,34 +1,36 @@
-
 <!DOCTYPE html>
-<html lang="en">
+
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/main.css">
-    <title>Hello, world!</title>
+    <?php
+    $nombreDelJueguito = "El Jueguito";
+    $seccion = "";?>
+    <title><?=$seccion?></title>
   </head>
+
   <body>
-
-
-
 <?php
 
-$nombreDelJueguito = "El Jueguito";
-$seccion = "";
-global $nombreDelJueguito;
-global $seccion;
+if (isset($_SESSION["email"])) {
 
-$botones = ["Home" => "home.php",
- "Login" => "login.php",
- "Registrarse" => "register.php",
- "Mi Perfil" => "usuarios.php",
- "Preguntas Frecuentes" => "faq.php",
- "Contacto" => "contacto.php"];
+  $botones = ["Home" => "home.php",
+   "Logout" => "home.php?logout=1",
+   "A jugar" => "jugar.php",
+   "Mi Perfil" => "usuarios.php",
+   "Preguntas Frecuentes" => "faq.php",
+   "Contacto" => "contacto.php"];
+
+} else {
+
+  $botones = ["Home" => "home.php",
+   "Login" => "login.php",
+   "Registrarse" => "register.php",
+   "Mi Perfil" => "usuarios.php",
+   "Preguntas Frecuentes" => "faq.php",
+   "Contacto" => "contacto.php"];
+  
+}
+
+
 
 ?>
 

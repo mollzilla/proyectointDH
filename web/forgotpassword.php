@@ -1,17 +1,10 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <?php $seccion = "Olvidaste tu Password";
+    include("head.php");
+    include("header.php")?>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Sigmar+One|Work+Sans:900&display=swap" rel="stylesheet">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/main.css">
-    <title>Olvidaste tu password</title>
   </head>
   <body>
 <body>
@@ -82,29 +75,24 @@
         if ($key == "email" && $value == $_POST["email"]) {
           //cuando encuentro el que busco con el mail, envio un mail
           $recipient = $_POST["email"];
+          $usuario["password"] = password_hash($nuevaContrasenia, PASSWORD_DEFAULT);
 
         }
       }
-
-                mail($recipient, $subject, $message, $headers);
     }
 
+  mail($recipient, $subject, $message, $headers);
 
-
-
-    //que ese mail contenga un link a un reset pass o una contrasenia provisoria
-    // echo "Te enviamos un mail con una contraseña provisoria";
     } //fin del if POST?>
       </div>
     </div>
 
     <footer>
       <?php include 'footer.php'; ?>
-        <div class="bg-fondito pt-5 pb-5 ">
-        </div>
-
-
-
+    </footer>
+    <div class="bg-fondito pt-5 pb-5 ">
     </div>
-    </body>
-    </html>
+
+  </div>
+</body>
+</html>

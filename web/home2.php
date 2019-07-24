@@ -2,41 +2,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <?php $seccion = "Home";
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/home2.css">
-    <link rel="stylesheet" href="./css/ranking.css">
-
-
-<!--Queria los de Ionicon pero traje todos por las dudas de que quiera usarlos en algun momento -->
-    <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Sigmar+One|Work+Sans:900&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<!--End of Queria los de Ionicon pero traje todos por las dudas de que quiera usarlos en algun momento -->
-
-    <title>Bienvenido!</title>
+     include("head.php");
+     include("header.php");?>
   </head>
-  <body>
+
 <body>
 <div class="container bg-light">
 
 <nav>
-  <?php
-    $seccion = "home";
-    include_once "header.php"; /* para incluir la botonera de navegacion*/
-  ?>
+
   <div class="bg-tarjetita pt-5 pb-5">
   </div>
 
@@ -49,76 +25,112 @@
     <div  class="carousel slide" data-ride="carousel" data-interval="3500">
       <div class="carousel-inner">
         <div class="carousel-item active">
+          <div class="" style="height:350px;">
+
           <img class="d-block w-100" src="./img/tipitos.jpg" alt="First slide">
+
+          </div>
           <div class="carousel-caption d-none d-md-block">
-            <h2 class="text-dark">Cosa que hace el Jueguito</h5>
-            <p class="text-dark ">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
           </div>
         </div>
         <div class="carousel-item">
+          <div class="" style="height:350px;">
           <img class="d-block w-100" src="./img/social-people.jpg" alt="Second slide">
         </div>
+</div>
         <div class="carousel-item">
+          <div class="" style="height:350px;">
           <img class="d-block w-100" src="./img/pixelated-fruits.jpg" alt="Third slide">
+</div>
         </div>
       </div>
     </div>
 </div>
+
+<main>
+
+    <h1 class= "text-center py-3 m-0 titulo-jueguito text-wrap">Bienvenidos!!!</h1>
+
+<?php for ($i=0; $i < 2; $i++) :
+?>
+<div class="row">
+
+  <div class="imagen col-12 col-lg-6 p-5 ">
+    <img src=".\img\social-people.jpg" class="img-fluid" alt="">
+  </div>
+
+  <div class="texto col-12 col-lg-6 p-5">
+    <h3 class="pb-2">Cosa que hace <?= $nombreDelJueguito ?></h3>
+    <h4 class="font-weight-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+  </div>
+
+  <div class="texto col-12 col-lg-6 p-5 ">
+    <h3 class="pb-2">Cosa que hace <?= $nombreDelJueguito ?></h3>
+    <h4 class="font-weight-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+  </div>
+
+  <div class="imagen col-12 col-lg-6 p-5 ">
+    <img src=".\img\pixelated-fruits.jpg" class="img-fluid" alt="">
+  </div>
+
+
+</div>
+
+<?php endfor; ?>
 
 <div class="bienvenido-container text-center py-4">
   <h2>Bienvenido a <?= $nombreDelJueguito ?>!!! Un juego que Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
 </div>
 
-<div class="d-inline-flex justify-content-between">
 
-<div class="container col-lg-3 d-inline-flex flex-row" style="margin-top:30px;">
+
+<div class="container">
   <div class="row">
 
-    <div class="">
+    <div class="col-12 col-md-6 col-lg-4">
       <div class="hovereffect">
         <img class="img-responsive" src="./img/press-start.jpg" alt="">
         <div class="overlay">
-          <h2 class="a-jugar">A JUGAR</h2>
-				  <p><a href="#">Click Aqui Para empezar!</a></p>
+          <h2 class="">A JUGAR!!!</h2>
+          <p><a href="#">Click Aqui!</a></p>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-    <div class="container col-lg-3 d-inline-flex flex-row" style="margin-top:30px;">
-      <div class="row">
-
-        <div class="">
-          <div class="hovereffect">
-            <img class="img-responsive" src="./img/press-start.jpg" alt="">
+<!-- <div class="col-12 col-md-6 col-lg-4"
+    <div class="hovereffect">
+        <img class="img-responsive" src="http://placehold.it/350x250" alt="">
             <div class="overlay">
-              <h2>A JUGAR!!!</h2>
-    				  <p><a href="#">Click Aqui!</a></p>
+                <h2>Effect 12</h2>
+				<p>
+					<a href="#">LINK HERE</a>
+				</p>
             </div>
-          </div>
+    </div>
+</div> -->
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="hovereffect">
+        <img class="img-responsive" src="./img/press-start.jpg" alt="">
+        <div class="overlay">
+          <h2 class="align-items-end">A JUGAR!!!</h2>
+          <p><a href="#">Click Aqui!</a></p>
         </div>
       </div>
-  </div>
+    </div>
 
-        <div class="container col-lg-3 d-inline-flex flex-row" style="margin-top:30px;">
-          <div class="row">
-
-            <div class="d-flex">
-              <div class="hovereffect">
-                <img class="img-responsive" src="./img/press-start.jpg" alt="">
-                <div class="overlay">
-                  <h2 class="align-items-end">A JUGAR!!!</h2>
-        				  <p><a href="#">Click Aqui!</a></p>
-                </div>
-              </div>
-            </div>
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="hovereffect">
+        <img class="img-responsive" src="./img/press-start.jpg" alt="">
+        <div class="overlay">
+          <h2 class="align-items-end">A JUGAR!!!</h2>
+          <p><a href="#">Click Aqui!</a></p>
+        </div>
       </div>
-  </div>
+    </div>
 
 </div>
-
-
+</div>
 <h1 class="text-center pt-4">SALON DE LA FAMA</h1>
   <div class="ranking-container row">
     <div class="calesita col-lg-6">

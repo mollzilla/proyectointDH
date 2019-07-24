@@ -1,33 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <?php $seccion = "Inicia Sesion";
+    include("head.php");
+    include("header.php")?>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="stylesheet" href="css/login.css">
-
-    <title>Inicia Sesion</title>
   </head>
   <body>
 
 <nav>
-  <?php
-
-//una manera de hacerlo seria que el include de las paginas este dentro de un IF que pregunte si el usuario esta logueado
-//-- if $_SESSION {include el otro header que no tenga esos dos botones}
-
-  $seccion = "Login";
-
-            if(isset($_SESSION["email"])){
-              include "./header.php";
-            }else{
-              include "./header2.php";
-            }
-          ?>
 
 </nav>
 
@@ -89,11 +70,14 @@ foreach ($logindecod as $usuario) {
 
        }//fin del foreach anidado
        if($emailcorrecto && $passwordcorrecto ) { ?>
-        <h5 class='p-2 text-center'>Bienvenido <?=$nombrecorrecto?> !! Cuando la pagina este mas armada, te abrimos una session</h5> <?php }
+        <h5 class='p-2 text-center'>Bienvenido <?=$nombrecorrecto?> !! Cuando la pagina este mas armada, te abrimos una session</h5> <?php
+        $_SESSION["email"] = $emailcorrecto;
+
+        } //fin del foreach email y pass correctos
    }
    //fin del foreach ppal
    if (isset($_POST) && (!$passwordcorrecto || !$emailcorrecto)) { ?>
-     <h5 class='text-danger p-2 text-center'>El nombre de Usuario o passwrod son incorrectos. Por favor intentalo nuevamente</h5>
+     <h5 class='text-danger p-2 text-center'>El nombre de Usuario o passsword son incorrectos. Por favor intentalo nuevamente</h5>
    <?php } }// fin if post, valido acá usuario y contraseña porque pertenecen al mismo usuario.
 
  ?>
