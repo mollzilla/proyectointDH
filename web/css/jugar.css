@@ -7,7 +7,16 @@
  color: white;
  line-height: 35px;
 }
+
 .botoncito-check:checked + .botoncito-letra {
   background-color: green;
+}
 
+.botoncito-probar {
+ background-color: rgb(26,161,183) ;
+ width: 80px;
+ height: 35px;
+ border-radius: 3px;
+ color: white;
+ line-height: 20px;
 }

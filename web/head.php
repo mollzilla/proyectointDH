@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/home2.css">
+    <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/ranking.css">
+    <link rel="stylesheet" href="./css/jugar.css">
 
 
 <!--Queria los de Ionicon pero traje todos por las dudas de que quiera usarlos en algun momento -->
@@ -38,7 +39,7 @@ if (isset($_GET["logout"]) && $_GET["logout"] == 1) {
   unset($_SESSION["email"]);
 }
 if (isset($_SESSION["email"])) {
-  
+  //aca no se que tiene que ir pero seguro algo
 }
 
 

@@ -21,28 +21,15 @@ h1 {
   text-shadow: 0 0 2px #000;;
 }
 
-
 li {
     list-style-type: none;
 }
-
-div .footer1 {
-
-  padding:
-}
-
-
 
 @media (min-width: 968px) {
 
 a ion-icon.iconito {
   font-size: 48px;
   }
-}
-
-li.segundo-row {
-
-
 }
 
 
