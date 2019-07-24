@@ -45,7 +45,7 @@ $jugadoresRankeados = [
 
         <img src="img/faces/<?= $jugador["avatar"] ?>" class="rounded-circle mt-5 avatar-thumbnail" alt="">
         <div class="nro-ranking">
-          <h1 class="nro-ranking"><?=$jugador["ranking"] ?></h1>
+          <h2 class="nro-ranking similh1"  $jugador["ranking"] ?></h2>
         </div>
 
       </div>

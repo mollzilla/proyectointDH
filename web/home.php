@@ -49,7 +49,7 @@
 
 <main>
 
-    <h1 class= "text-center py-3 m-0 titulo-jueguito text-wrap">Bienvenidos!!!</h1>
+<h2 class="similh1">Bienvenidos!!!</h2>
 
 <?php for ($i=0; $i < 2; $i++) :
 ?>
@@ -131,7 +131,7 @@
 
 </div>
 </div>
-<h1 class="text-center pt-4">SALON DE LA FAMA</h1>
+<h2 class="text-center pt-4 similh1">SALON DE LA FAMA</h2>
   <div class="ranking-container row">
     <div class="calesita col-lg-6">
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-interval="3000" data-ride="carousel">
@@ -142,7 +142,7 @@
                 <div class="profile-container text-center"> <!--la voy a poner dentro de un div para que tome el 100% del div y no crezca tanto -->
                   <img src="img/faces/face1.jpg" class="rounded-circle mt-5 avatar-thumbnail" alt="">
                   <div class="nro-ranking">
-                    <h1 class="nro-ranking">1</h1>
+                    <h2 class="nro-ranking similh1">1</h2>
                   </div>
                 </div>
 
@@ -157,7 +157,7 @@
                 <div class="profile-container text-center"> <!--la voy a poner dentro de un div para que tome el 100% del div y no crezca tanto -->
                   <img src="img/faces/face1.jpg" class="rounded-circle mt-5 avatar-thumbnail" alt="">
                   <div class="nro-ranking">
-                    <h1 class="nro-ranking">2</h1>
+                    <h2 class="nro-ranking similh1">2</h2>
                   </div>
                 </div>
 
@@ -177,7 +177,7 @@
                 <div class="profile-container text-center"> <!--la voy a poner dentro de un div para que tome el 100% del div y no crezca tanto -->
                   <img src="img/faces/face1.jpg" class="rounded-circle mt-5 avatar-thumbnail" alt="">
                   <div class="nro-ranking">
-                    <h1 class="nro-ranking">3</h1>
+                    <h2 class="nro-ranking similh1">3</h2>
                   </div>
                 </div>
 
@@ -192,7 +192,7 @@
                 <div class="profile-container text-center"> <!--la voy a poner dentro de un div para que tome el 100% del div y no crezca tanto -->
                   <img src="img/faces/face1.jpg" class="rounded-circle mt-5 avatar-thumbnail" alt="">
                   <div class="nro-ranking">
-                    <h1 class="nro-ranking">4</h1>
+                    <h2 class="nro-ranking similh1">4</h2>
                   </div>
                 </div>
 
@@ -211,7 +211,7 @@
                 <div class="profile-container text-center"> <!--la voy a poner dentro de un div para que tome el 100% del div y no crezca tanto -->
                   <img src="img/faces/face1.jpg" class="rounded-circle mt-5 avatar-thumbnail" alt="">
                   <div class="nro-ranking">
-                    <h1 class="nro-ranking">5</h1>
+                    <h2 class="nro-ranking similh1">5</h2>
                   </div>
                 </div>
 

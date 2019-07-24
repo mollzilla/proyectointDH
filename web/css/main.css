@@ -4,6 +4,15 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#similh1{
+  font-family: 'Work Sans', sans-serif;
+  font-size: 3em;
+  color: rgb(26,161,183) ;
+  text-transform: uppercase;
+  text-shadow: 0 0 2px #000;
+  text-align: center
+}
+
 h1 {
   font-family: 'Work Sans', sans-serif;
   font-size: 3em;
