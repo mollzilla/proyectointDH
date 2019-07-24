@@ -49,11 +49,8 @@
 
 <main>
 
-<<<<<<< HEAD
 <h2 class="similh1">Bienvenidos!!!</h2>
-=======
-    <h1 class= "text-center py-3 m-0 titulo-jueguito">Bienvenidos!!!</h1>
->>>>>>> 467a5b8f11479f8096b6d5a8f8363c5abbac3937
+
 
 <?php for ($i=0; $i < 2; $i++) :
 ?>
