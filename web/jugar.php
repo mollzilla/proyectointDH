@@ -3,7 +3,7 @@
   <head>
     <?php $seccion = "A Jugar!";
     include("head.php");
-    include("header.php")?>
+    include("botonera.php")?>
 
   </head>
 
@@ -11,9 +11,7 @@
     <div class="container bg-light text-center">
 
     <nav>
-      <?php $seccion = "home";
-      include "header.php"; /* para incluir la botonera de navegacion*/
-      ?>
+
     </nav>
 
     <div class="bg-tarjetita pt-5 pb-5">

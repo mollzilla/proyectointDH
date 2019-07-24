@@ -27,7 +27,7 @@ if (isset($_SESSION["email"])) {
    "Mi Perfil" => "usuarios.php",
    "Preguntas Frecuentes" => "faq.php",
    "Contacto" => "contacto.php"];
-  
+
 }
 
 
@@ -54,6 +54,3 @@ if (isset($_SESSION["email"])) {
 
 </div>
 </header>
-
-</body>
-</html>

@@ -3,15 +3,12 @@
   <head>
     <?php $seccion = "Preguntas Frecuentes";
     include("head.php");
-    include("header.php")?>
+    include("botonera.php")?>
 
   </head>
   <body>
 <body>
 
-<nav>
-  <?php   include "header.php"; /* para incluir la botonera de navegacion*/?>
-</nav>
 
     <main class="main">
         <div class="container bg-light pt5">

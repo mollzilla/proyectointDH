@@ -3,7 +3,7 @@
   <head>
     <?php $seccion = "Contactanos!";
     include("head.php");
-    include("header.php")?>
+    include("botonera.php")?>
 
   </head>
   <body>
@@ -11,10 +11,6 @@
 <div>
 
   <nav>
-  <?php
-  $seccion = "Contacto";
-   include "./header.php"; /* para incluir la botonera de navegacion*/
-  ?>
   </nav>
 
 <div class="container bg-light">

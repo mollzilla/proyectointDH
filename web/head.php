@@ -38,7 +38,7 @@ if (isset($_GET["logout"]) && $_GET["logout"] == 1) {
   unset($_SESSION["email"]);
 }
 if (isset($_SESSION["email"])) {
-  echo $_SESSION["email"];
+  
 }
 
 

@@ -3,15 +3,12 @@
   <head>
     <?php $seccion = "Tu perfil";
     include("head.php");
-    include("header.php")?>
+    include("botonera.php")?>
 
   </head>
 
 <body>
 
-  <nav>
-    <?php   include "header.php"; /* para incluir la botonera de navegacion*/?>
-  </nav>
 
     <div class="main">
         <div class="container bg-light pt5">

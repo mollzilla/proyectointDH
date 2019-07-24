@@ -3,9 +3,9 @@
   <head>
     <?php $seccion = "Inicia Sesion";
     include("head.php");
-    include("header.php")?>
+    include("botonera.php")?>
 
-  
+
   </head>
   <body>
 
@@ -13,10 +13,6 @@
 
 <nav>
 
-  <?php
-    $seccion = "home";
-    include "header.php"; /* para incluir la botonera de navegacion*/
-  ?>
 </nav>
 
   <div class="bg-tarjetita pt-5 pb-5 ">
