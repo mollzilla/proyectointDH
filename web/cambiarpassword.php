@@ -53,42 +53,54 @@
     //los guardo en el archivo
     $datosCodificados=file_get_contents("archivo.txt"); //traigo los datos
     $datosDecodificados=json_decode($datosCodificados, true); //los decodifico
-    foreach ($datosDecodificados as $usuario) {
-      $emailcorrecto = false;
-      $passwordcorrecto = false;
-      $passwordsIguales=false;
-        foreach ($usuario as $datos => $valor) {
-           if ($datos=="email" && $_POST["email"]==$valor) {
-             $emailcorrecto = true;
-           }
 
-           if ($datos == "password" && password_verify($_POST["password"], $valor)) {
-             $passwordcorrecto = true;
-           }
-
-          if ($_POST["new-password"] == $_POST["confirmar"]) {
-            $passwordsIguales=true;
-          }
-
-           }//fin del foreach anidado
-           if($emailcorrecto && $passwordcorrecto && $passwordsIguales) {
-            $usuario["password"] = password_hash($_POST["new-password"], PASSWORD_DEFAULT);  //esta es la linea de codigo que hay que revisar!!!!
-            // $datosAGuardar["password"] = password_hash($_POST["password"], PASSWORD_DEFAULT);
-
-            } //fin del if  email y pass correctos
-       }
-       //fin del foreach ppal
+    $usuarioEncontrado = [];
 
 
-       $datosCodificados=json_encode($datosDecodificados);
-       file_put_contents("archivo.txt", $datosCodificados);
-       echo "Gracias! tu contrasena fue modificada con exito";
+    $emailcorrecto = false;
+    $passwordcorrecto = false;
+    $passwordsIguales=false;
+
+for ($i=0; $i < count($datosDecodificados); $i++) {
+
+  if($datosDecodificados[$i]["email"] == $_POST["email"]){
+      echo ("encontre el usuario <br>");
+        $emailcorrecto=true;
+
+
+  if (password_verify($_POST["password"], $datosDecodificados[$i]["password"])) {
+        $passwordcorrecto = true;
+        echo "password bien <br>";
+      }
+
+  if ($_POST["new-password"] == $_POST["confirmar"]) {
+        $passwordsIguales=true;
+        echo "passwords iguales <br>";
+      }
+
+  if ($emailcorrecto && $passwordcorrecto && $passwordsIguales) {
+    $datosDecodificados[$i]["password"] = password_hash($_POST["new-password"], PASSWORD_DEFAULT);
+      echo "Gracias! tu contraseña fue modificada con exito";
+  }
+  $datosCodificados=json_encode($datosDecodificados);
+  file_put_contents("archivo.txt", $datosCodificados);
+
+    break; // que no siga ejecutando despues de que encontro el usuario correcto
+    }
+
+} // fin de ciclo for
+
+
+
 
        if (isset($_POST) && (!$passwordcorrecto || !$emailcorrecto)) { ?>
          <h5 class='text-danger p-2 text-center'>El nombre de Usuario o passsword son incorrectos. Por favor intentalo nuevamente</h5>
        <?php }
 
-    }// fin if post    ?>
+       if (isset($_POST) && ($_POST["new-password"] !== $_POST["confirmar"])) { ?>
+         <h5 class='text-danger p-2 text-center'>Las nuevas contraseñas no coinciden. Por favor intentalo nuevamente</h5>
+
+    <?php } }// fin if post    ?>
 
 
 
