@@ -25,7 +25,7 @@
     <div  class="carousel slide" data-ride="carousel" data-interval="3500">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <div class="" style="height:350px;">
+          <div class="" style="height:450px;">
 
           <img class="d-block w-100" src="./img/tipitos.jpg" alt="First slide">
 
@@ -34,12 +34,12 @@
           </div>
         </div>
         <div class="carousel-item">
-          <div class="" style="height:350px;">
+          <div class="" style="height:450px;">
           <img class="d-block w-100" src="./img/social-people.jpg" alt="Second slide">
         </div>
 </div>
         <div class="carousel-item">
-          <div class="" style="height:350px;">
+          <div class="" style="height:450px;">
           <img class="d-block w-100" src="./img/pixelated-fruits.jpg" alt="Third slide">
 </div>
         </div>
