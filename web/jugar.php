@@ -25,15 +25,11 @@
 
   <?php
       foreach(range('a','z') as $v){  ?>
-        <?php //necesito de alguna manera generar persistencia, pero no se como hacerlo con el bucle for. aca va un intento
-      //if (isset($_POST)) { //si se mando algo... ?>
-            <!-- <input type="checkbox" id="letra" name="<?=$_POST["$v"]?>" value="<?=$_POST["$v"] // la letra que fue enviada va a estar checkeada o sea...?>" checked>
-            <?php //} fin del if. else { ?>
-        -->
-        <input type="checkbox" class="botoncito-check d-none"  id="<?=$v?>" name="letra[]" value="<?=$v?>">
+
+        <input type="checkbox" class="botoncito-check d-none"  id="<?=$v?>" name="letra" value="<?=$v?>">
         <label for="<?=$v?>" class="text-uppercase botoncito-letra"><?=$v?></label>
          <?PHP
-      } if (isset($_POST)) {
+      } if (($_POST)) {
         var_dump($_POST["letra"]);
       } ?>
 

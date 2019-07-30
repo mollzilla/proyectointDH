@@ -3,11 +3,24 @@ div.container {
 }
 .similh1{
   font-family: 'Work Sans', sans-serif;
-  font-size: 3em;
+  font-size: 2em;
   color: rgb(26,161,183) ;
   text-transform: uppercase;
   text-shadow: 0 0 2px #000;
   text-align: center
+}
+
+.calestita-dentro {
+  height:250px;
+  }
+
+@media (min-width: 400px) {
+  .similh1{
+    font-size: 3em; }
+
+  .calestita-dentro {
+    height:550px;
+    }
 }
 
 div h2.a-jugar {

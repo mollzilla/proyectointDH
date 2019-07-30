@@ -23,14 +23,14 @@
   </div>
 
   <main class="main p-2 row">
-    <div class="titulos text-center pt-4">
-      <h2 class="titulo">Panel de Administrador</h2>
+    <div class="titulos text-center pt-4 col-6 offset-3">
+      <h2 class="titulo ">Panel de Administrador</h2>
       <h3 class="titulo">Palabras</h3>
     </div>
 
     <div class="col-12 text-center mb-4">
       <br>
-      <button type="button" class="boton-agregar mr-3 my-2  btn btn-primary" name="agregar"><a href="./nueva-palabra.php" class="text-light">Agregar Palabra</a></button>
+      <button type="button" class="boton-agregar mr-3 my-2  btn btn-primary" name="agregar"><a href="nueva-palabra.php" class="text-light">Nueva Palabra</a>  </button>
     </div>
 
 <?php

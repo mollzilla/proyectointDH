@@ -22,10 +22,10 @@
     <h1 class= "text-center py-3 m-0 titulo-jueguito text-wrap"><?= $nombreDelJueguito ?></h1>
 
 <div class="calesita col-lg-6">
-    <div  class="carousel slide" data-ride="carousel" data-interval="3500">
+    <div  class="carousel slide" data-ride="carousel" data-interval="3000">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <div class="" style="height:450px;">
+          <div class="calestita-dentro" style="">
 
           <img class="d-block w-100" src="./img/tipitos.jpg" alt="First slide">
 
@@ -34,12 +34,12 @@
           </div>
         </div>
         <div class="carousel-item">
-          <div class="" style="height:450px;">
+          <div class="calestita-dentro" style="">
           <img class="d-block w-100" src="./img/social-people.jpg" alt="Second slide">
         </div>
 </div>
         <div class="carousel-item">
-          <div class="" style="height:450px;">
+          <div class="calestita-dentro" style="">
           <img class="d-block w-100" src="./img/pixelated-fruits.jpg" alt="Third slide">
 </div>
         </div>
@@ -218,8 +218,7 @@
   </div>
 
   <div class="col text-center">
-    <button type="button" class="btn btn-outline-primary"><a href="./ranking.php">Ranking</a></button>
-    <button type="button" class="btn btn-outline-primary"><a href="">Panel Administrador</a></button>
+    <button type="button" class="btn btn-outline-primary"><a href="./admin/tabla-palabras.php/">Panel Administrador</a></button>
   </div>
 
 

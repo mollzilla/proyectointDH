@@ -1,3 +1,99 @@
+<?php
+$errores = [];
+
+if ($_POST) {
+
+    if (strlen($_POST["usuario"]) < 5){ //si el nombre tiene mas de 5 caracteres
+  $errores[]= "El nombre de usuario debe tener al menos 5 Letras. Por favor, ingresa un nombre mas largo.";
+
+ }
+
+//------------------validar formato del mail
+
+ if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == false) {  $errores[]= "El correo ingresado no es una direccion de correo valida. Por favor ingresa una direccion de correo.";
+}
+
+//------------------pass minimo 8 Contraseña por  ahora sin hash
+//------------------ verificacion de Contraseña alfanumerica
+
+
+if (strlen($_POST["password"]) == 0 && strlen($_POST["confirmar"]) == 0) { $errores[]="Los dos campos de contraseña estan vacios"; }
+else if (strlen($_POST["password"]) == 0)  { $errores[]="La contraseña esta vacia"; }
+else if (strlen($_POST["password"]) < 8)  { $errores[]="La contraseña debe tener como minimo 8 caracteres"; }
+else if (strlen($_POST["confirmar"]) == 0)  { $errores[]="Falta la confirmacion de contraseña"; }
+else if ($_POST["password"] !== $_POST["confirmar"])  { $errores[]="Las Contraseñas no son iguales. Por favor ingresalas nuevamente."; }
+else if(!ctype_alnum($_POST["password"])){
+$errores[]="La Contraseña debe tener una longitud de al menos 8 caracteres.";
+}
+
+
+//------------------imagen en jpg jpeg png y peso del archivo (size <= 2mb)
+
+if ($_FILES["avatar"]["name"] !== "") {
+
+  $ext = pathinfo($_FILES["avatar"]['name'], PATHINFO_EXTENSION);
+    if ($ext !== "jpg" && $ext !== "jpeg" && $ext !== "png"){
+      $errores[] = "El archivo ingresado no es un formato de imagen valido. Por favor intentalo nuevamente.";
+    }
+  else if ($_FILES["avatar"]['size'] > 2097152) {
+    $errores[]="El tamaño de la imagen es mayor al permitido. Por favor elige una imagen más pequeña";
+  }
+}
+
+//esto esta mas arriba que el count de errores para poder comparar los datos ya guardados
+//con los datos que esta intentando guardar el usuario
+
+//Abro el archivo con los datos actuales
+$usuariosEnJson = file_get_contents("archivo.txt");
+
+//Ahora decodeo el array que me trajo en la linea anterior
+$usuariosDecodeados = json_decode($usuariosEnJson, true);
+//Ahora guardo el ultimo usuario que me llego x $_POST al final de $usuariosDecodeados
+
+if (!empty($usuariosDecodeados)) {
+
+  foreach ($usuariosDecodeados as $usuario) {
+    foreach ($usuario as $dato => $valor) {
+       if ($dato === "email" && $valor === $_POST["email"]) {
+        $errores[] = "El email escogido ya esa registrado. Por favor, elige otro o inicia sesion con tu usuario";
+       }
+    }
+  }
+}
+
+if (count($errores) > 0) {
+            ?><ul>
+            <?php foreach ($errores as $error) { ?>
+                <li class='text-danger p-2 text-center'><?= $error?></li>
+            <?php } ?>
+              </ul>
+<?php } else {
+        $datosAGuardar = [];
+
+        $datosAGuardar["password"] = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        $datosAGuardar["nombre"] = $_POST["nombre"];
+        $datosAGuardar["email"] = $_POST["email"];
+        $datosAGuardar["avatar"] = $_FILES["avatar"];
+        $datosAGuardar["id"] = count($usuariosDecodeados);
+
+
+        $usuariosDecodeados[] = $datosAGuardar;
+        //Ahora encodeo de nuevo lo que acabo de hacer a json
+        $datosEnJson = json_encode($usuariosDecodeados);
+        //Ahora guardo en el archivo la array encodeada
+        file_put_contents("archivo.txt", $datosEnJson);
+        move_uploaded_file($_FILES['avatar']['tmp_name'], 'file_upload/'.$_FILES['avatar']['name']);
+        header("Location:login.php");
+    }
+  }
+
+    else if (!isset($_POST["password"]) || !isset($_POST["email"]) || !isset($_POST["nombre"]) ) {
+    echo " <br>Por favor completa los datos que solicita el formulario";
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -311,100 +407,6 @@ Confirmar contraseña -->
 
 
 
-<?php
-$errores = [];
-
-if ($_POST) {
-
-    if (strlen($_POST["nombre"]) < 5){ //si el nombre tiene mas de 5 caracteres
-  $errores[]= "El nombre de usuario debe tener al menos 5 Letras. Por favor, ingresa un nombre mas largo.";
-
- }
-
-//------------------validar formato del mail
-
- if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == false) {  $errores[]= "El correo ingresado no es una direccion de correo valida. Por favor ingresa una direccion de correo.";
-}
-
-//------------------pass minimo 8 Contraseña por  ahora sin hash
-//------------------ verificacion de Contraseña alfanumerica
-
-
-if (strlen($_POST["password"]) == 0 && strlen($_POST["confirmar"]) == 0) { $errores[]="Los dos campos de contraseña estan vacios"; }
-else if (strlen($_POST["password"]) == 0)  { $errores[]="La contraseña esta vacia"; }
-else if (strlen($_POST["password"]) < 8)  { $errores[]="La contraseña debe tener como minimo 8 caracteres"; }
-else if (strlen($_POST["confirmar"]) == 0)  { $errores[]="Falta la confirmacion de contraseña"; }
-else if ($_POST["password"] !== $_POST["confirmar"])  { $errores[]="Las Contraseñas no son iguales. Por favor ingresalas nuevamente."; }
-else if(!ctype_alnum($_POST["password"])){
-$errores[]="La Contraseña debe tener una longitud de al menos 8 caracteres.";
-}
-
-
-//------------------imagen en jpg jpeg png y peso del archivo (size <= 2mb)
-
-if ($_FILES["avatar"]) {
-
-  $ext = pathinfo($_FILES["avatar"]['name'], PATHINFO_EXTENSION);
-    if ($ext !== "jpg" && $ext !== "jpeg" && $ext !== "png"){
-      $errores[] = "El archivo ingresado no es un formato de imagen valido. Por favor intentalo nuevamente.";
-    }
-  else if ($_FILES["avatar"]['size'] > 2097152) {
-    $errores[]="El tamaño de la imagen es mayor al permitido. Por favor elige una imagen más pequeña";
-  }
-}
-
-//esto esta mas arriba que el count de errores para poder comparar los datos ya guardados
-//con los datos que esta intentando guardar el usuario
-
-//Abro el archivo con los datos actuales
-$usuariosEnJson = file_get_contents("archivo.txt");
-
-//Ahora decodeo el array que me trajo en la linea anterior
-$usuariosDecodeados = json_decode($usuariosEnJson, true);
-//Ahora guardo el ultimo usuario que me llego x $_POST al final de $usuariosDecodeados
-
-if (!empty($usuariosDecodeados)) {
-
-  foreach ($usuariosDecodeados as $usuario) {
-    foreach ($usuario as $dato => $valor) {
-       if ($dato === "email" && $valor === $_POST["email"]) {
-        $errores[] = "El email escogido ya esa registrado. Por favor, elige otro o inicia sesion con tu usuario";
-       }
-    }
-  }
-}
-
-if (count($errores) > 0) {
-            ?><ul>
-            <?php foreach ($errores as $error) { ?>
-                <li class='text-danger p-2 text-center'><?= $error?></li>
-            <?php } ?>
-              </ul>
-<?php } else {
-        $datosAGuardar = [];
-
-        $datosAGuardar["password"] = password_hash($_POST["password"], PASSWORD_DEFAULT);
-        $datosAGuardar["nombre"] = $_POST["nombre"];
-        $datosAGuardar["email"] = $_POST["email"];
-        $datosAGuardar["avatar"] = $_FILES["avatar"];
-        $datosAGuardar["id"] = count($usuariosDecodeados);
-
-
-        $usuariosDecodeados[] = $datosAGuardar;
-        //Ahora encodeo de nuevo lo que acabo de hacer a json
-        $datosEnJson = json_encode($usuariosDecodeados);
-        //Ahora guardo en el archivo la array encodeada
-        file_put_contents("archivo.txt", $datosEnJson);
-        move_uploaded_file($_FILES['avatar']['tmp_name'], 'file_upload/'.$_FILES['avatar']['name']);
-        echo "Gracias Por completar tus datos! tu usuario ha sido generado con exito";
-    }
-  }
-
-    else if (!isset($_POST["password"]) || !isset($_POST["email"]) || !isset($_POST["nombre"]) ) {
-    echo " <br>Por favor completa los datos que solicita el formulario";
-    }
-
-?>
 
 
 </main>

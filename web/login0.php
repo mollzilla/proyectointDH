@@ -65,7 +65,7 @@ foreach ($logindecod as $usuario) {
   </div>
 <main class="main p-4 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
 
-<h2 class="pt-4 pb-4"class="titulo_login">Logueate al Jueguito!</h2>
+<h2 class="pt-4 pb-4"class="titulo_login">Ingresá tus datos</h2>
   <form class="form-login" action="login.php" method="post">
     <label for="">email</label><br>
     <input class="form-control"type="email" name="email" value="<?= $_POST? $_POST["login_usuario"] : '' ?>" required "<?php if(isset($_COOKIE["login_usuario"])) { echo $_COOKIE["login_usuario"]; } ?>"><br>

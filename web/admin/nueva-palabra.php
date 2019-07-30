@@ -89,7 +89,7 @@ if ($_POST) {
 
 
 
-
+  <a href="tabla-palabras.php" class="form-control btn-primary mt-3 text-center">Volver a Panel de Administrador</a>
 
 
 

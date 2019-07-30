@@ -17,17 +17,17 @@ if (isset($_SESSION["email"])) {
    "A jugar" => "jugar.php",
    "Mi Perfil" => "usuarios.php",
    "Preguntas Frecuentes" => "faq.php",
-   "Contacto" => "contacto.php"];
+   "Contacto" => "contacto.php",
+   "Ranking" => "ranking.php"];
 
 } else {
 
   $botones = ["Home" => "home.php",
    "Login" => "login.php",
    "Registrarse" => "register.php",
-   "Mi Perfil" => "usuarios.php",
    "Preguntas Frecuentes" => "faq.php",
-   "Contacto" => "contacto.php"];
-
+   "Contacto" => "contacto.php",
+   "Ranking" => "ranking.php"];
 }
 
 
