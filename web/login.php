@@ -68,26 +68,17 @@ foreach ($logindecod as $usuario) {
 <h2 class="pt-4 pb-4"class="titulo_login">Ingresá tus datos</h2>
   <form class="form-login" action="login.php" method="post">
     <label for="">email</label><br>
-    <input class="form-control"type="email" name="email" value="<?= $_POST? $_POST["email"] : '' ?>" required><br>
+    <input class="form-control"type="email" name="email" value="<?= $_POST? $_POST["login_usuario"] : '' ?>" required "<?php if(isset($_COOKIE["login_usuario"])) { echo $_COOKIE["login_usuario"]; } ?>"><br>
     <label class="text-dark" for="">password</label><br>
-    <input class="form-control" type="password" name="password" value=""required><br>
+    <input class="form-control" type="password" name="password" value="<?php if(isset($_COOKIE["usuario_password"])) { echo $_COOKIE["usuario_password"]; } ?>"required><br>
     <input class="rbtn btn-primary mt-2 mb-2" type="submit" name="" value="enviar"><br>
-    <label for="acepto" class='text-dark'>Recordar mi usuario</label>
-    <input type="checkbox" name="recordarUser" id="recordarUser" name="recordarUser" id="recordarUSer" class="d-inline" value="<?= $_POST? $_POST["recordarUser"] : '';?>" >
-    
-  </form>
+    <label for="recordarme" class='text-dark'>Recordar mi usuario</label>
+    <input type="checkbox" name="remember" id="remember" class="d-inline" value="<?php if(isset($_COOKIE["login_usuario"])) { ?>" checked
+  <?php } ?>>
+
+    </form>
 <h3>Olvidaste tu contraseña?</h3>
 <a href="./forgotpassword.php">hacé click acá</a>
-
-
-
-
-
-
-
-
-
-
 
 </html>
 
