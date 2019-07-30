@@ -1,27 +1,16 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Sigmar+One|Work+Sans:900&display=swap" rel="stylesheet">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/main.css">
-    <title>Cambia tu password</title>
+    <?php $seccion = "Modifica tu password!";
+    include("head.php");
+    include("botonera.php")?>
   </head>
   <body>
 <body>
 <div>
 
 <nav>
-  <?php
-  $seccion = "Contacto";
-  include "./header.php"; /* para incluir la botonera de navegacion*/
-  ?>
+
 </nav>
 
 <div class="container bg-light">
@@ -39,7 +28,7 @@
   <div class="form-group col-md-8 offset-md-2 col-lg-6 offset-lg-3">
     <form class="" action="cambiarpassword.php" method="post">
       <label for="email" class='text-dark'>E-mail:</label>
-      <input type="text" name="email" class="form-control" value="Lorem@impsum.com" readonly>
+      <input type="text" name="email" class="form-control" value="tumail@tumail.com">
       <br>
       <label for="password" class='text-dark'>Contraseña Actual:</label>
       <input type="password" class="form-control" name="password" required>
@@ -62,11 +51,60 @@
     //si la contrasenia esta bien, reescribo la contrasenia
     //codifico los datos
     //los guardo en el archivo
+    $datosCodificados=file_get_contents("archivo.txt"); //traigo los datos
+    $datosDecodificados=json_decode($datosCodificados, true); //los decodifico
+
+    $usuarioEncontrado = [];
 
 
-      // echo "Gracias! tu contrasena fue modificada con exito";
-    } ?>
-      </div>
+    $emailcorrecto = false;
+    $passwordcorrecto = false;
+    $passwordsIguales=false;
+
+for ($i=0; $i < count($datosDecodificados); $i++) {
+
+  if($datosDecodificados[$i]["email"] == $_POST["email"]){
+      echo ("encontre el usuario <br>");
+        $emailcorrecto=true;
+
+
+  if (password_verify($_POST["password"], $datosDecodificados[$i]["password"])) {
+        $passwordcorrecto = true;
+        echo "password bien <br>";
+      }
+
+  if ($_POST["new-password"] == $_POST["confirmar"]) {
+        $passwordsIguales=true;
+        echo "passwords iguales <br>";
+      }
+
+  if ($emailcorrecto && $passwordcorrecto && $passwordsIguales) {
+    $datosDecodificados[$i]["password"] = password_hash($_POST["new-password"], PASSWORD_DEFAULT);
+      echo "Gracias! tu contraseña fue modificada con exito";
+  }
+  $datosCodificados=json_encode($datosDecodificados);
+  file_put_contents("archivo.txt", $datosCodificados);
+
+    break; // que no siga ejecutando despues de que encontro el usuario correcto
+    }
+
+} // fin de ciclo for
+
+
+
+
+       if (isset($_POST) && (!$passwordcorrecto || !$emailcorrecto)) { ?>
+         <h5 class='text-danger p-2 text-center'>El nombre de Usuario o passsword son incorrectos. Por favor intentalo nuevamente</h5>
+       <?php }
+
+       if (isset($_POST) && ($_POST["new-password"] !== $_POST["confirmar"])) { ?>
+         <h5 class='text-danger p-2 text-center'>Las nuevas contraseñas no coinciden. Por favor intentalo nuevamente</h5>
+
+    <?php } }// fin if post    ?>
+
+
+
+          </div>
     </div>
 
     <footer>
