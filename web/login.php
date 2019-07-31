@@ -7,7 +7,7 @@ if($_POST){
   }
 
 $email = $_POST["email"] ;
-$password = /*password_hash*/($_POST["password"]/*, PASSWORD_DEFAULT*/); //por ahora lo comento voy a intentarlo sin hashear
+$password = ($_POST["password"]);
 
 
 //traigo los datos del usuario, de un archivo que me pasó Mili
@@ -43,14 +43,17 @@ foreach ($logindecod as $usuario) {
      <h5 class='text-danger p-2 text-center'>El nombre de Usuario o passsword son incorrectos. Por favor intentalo nuevamente</h5>
    <?php } }// fin if post, valido acá usuario y contraseña porque pertenecen al mismo usuario.
 
- ?>
+ 
+$seccion = "Inicia Sesion";
+include("head.php");
+include("botonera.php");
+
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <?php $seccion = "Inicia Sesion";
-    include("head.php");
-    include("botonera.php")?>
+
 
   </head>
   <body>
@@ -68,7 +71,7 @@ foreach ($logindecod as $usuario) {
 <h2 class="pt-4 pb-4"class="titulo_login">Logueate al Jueguito!</h2>
   <form class="form-login" action="login.php" method="post">
     <label for="">email</label><br>
-    <input class="form-control"type="email" name="email" value="<?= $_POST? $_POST["login_usuario"] : '' ?>" required "<?php if(isset($_COOKIE["login_usuario"])) { echo $_COOKIE["login_usuario"]; } ?>"><br>
+    <input class="form-control"type="email" name="email" value="<?= $_POST? $_POST["email"] : '' ?>" required "<?php if(isset($_COOKIE["login_usuario"])) { echo $_COOKIE["login_usuario"]; } ?>"><br>
     <label class="text-dark" for="">password</label><br>
     <input class="form-control" type="password" name="password" value="<?php if(isset($_COOKIE["usuario_password"])) { echo $_COOKIE["usuario_password"]; } ?>"required><br>
     <input class="rbtn btn-primary mt-2 mb-2" type="submit" name="" value="enviar"><br>
@@ -77,21 +80,25 @@ foreach ($logindecod as $usuario) {
   <?php } ?>>
 
     </form>
-<h3>Olvidaste tu contraseña?</h3>
-<a href="./forgotpassword.php">hacé click acá</a>
+<div class="">
 
-</html>
+
+<h3>Olvidaste tu contraseña?</h3>
+
+<a href="./forgotpassword.php">hacé click acá</a>
 
 
   </main>
- <footer>
-   <?php
 
-   include "./footer.php";
-   ?>
 
- </footer>
- <div class="bg-fondito pt-5 pb-5 ">
- </div>
+  <footer class="">
+  <?php include 'footer.php'; ?>
+  </footer>
+  <div class="bg-fondito pt-5 pb-5">
+  </div>
 
- </div>
+  </div>
+
+  </div>
+</div>
+  </html>

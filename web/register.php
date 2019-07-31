@@ -60,14 +60,16 @@ if (!empty($usuariosDecodeados)) {
     }
   }
 }
-
+$printErrores="";
 if (count($errores) > 0) {
-            ?><ul>
-            <?php foreach ($errores as $error) { ?>
-                <li class='text-danger p-2 text-center'><?= $error?></li>
-            <?php } ?>
-              </ul>
-<?php } else {
+            $printErrores='<ul>';
+
+            foreach ($errores as $error) {
+                $printErrores.="<li class='text-danger p-2 text-center'>".$error."</li>";
+            }
+            $printErrores.='</ul>';
+      } else {
+        $printErrores="";
         $datosAGuardar = [];
 
         $datosAGuardar["password"] = password_hash($_POST["password"], PASSWORD_DEFAULT);
@@ -83,12 +85,12 @@ if (count($errores) > 0) {
         //Ahora guardo en el archivo la array encodeada
         file_put_contents("archivo.txt", $datosEnJson);
         move_uploaded_file($_FILES['avatar']['tmp_name'], 'file_upload/'.$_FILES['avatar']['name']);
-        header("Location:login.php");
+        header("Location:thankyouregister.php");
     }
   }
 
     else if (!isset($_POST["password"]) || !isset($_POST["email"]) || !isset($_POST["nombre"]) ) {
-    echo " <br>Por favor completa los datos que solicita el formulario";
+  $printErrores="";
     }
 
 ?>
@@ -117,7 +119,9 @@ if (count($errores) > 0) {
   <main class="col-lg-6 offset-lg-3 col-md-8 offset-md-2">
 
 
-
+  <div class="pt-3">
+  <?=$printErrores?>
+  </div>
 
   <div class="card tarjetita-header mt-3 text-center">
       <div class="card-body">
